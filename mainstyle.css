@@ -1,28 +1,39 @@
 body {
     position: relative;
     font-family: 'Circular Book', Helvetica, Arial, sans-serif;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: block;
 }
 
 section {
-    padding: 22%;
     color: white;
     margin: auto;
     text-align: center;
+    width: 100vw;
+    min-width: 375px;
+    height: 100vh;
+    background-size: cover;
 }
 
 h1 {
     font-size: 60px;
 }
+
 p {
     font-size: 18px;
     line-height: 1.5;
-    padding-right: 20%;
     padding-left: 20%;
+    padding-right: 20%;
+
 }
 @media (min-width: 768px) {
     p {
         font-size: 35px;
         line-height: 1.6;
+
     }
 }
 
@@ -36,6 +47,7 @@ p {
         border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     }
 }
+
 
 .navbar {
     margin-bottom: 0;
@@ -51,24 +63,29 @@ p {
 }
 
 header{
-    padding: 25%;
+    padding: 50%;
     background-color: ghostwhite;
     color: black;
 }
 
 #about {
-    background-color: black;
+    background-color: palevioletred;
     color: ghostwhite;
+    padding-top: 50%;
 }
+
 #experience {
     background-color: ghostwhite;
     color: darkslategrey;
+    padding-top: 80%;
 }
 
 #projects {
     background-color: cornflowerblue;
     color: black;
+    padding-top: 80%;
 }
 #contact {
     background-color: black;
+    padding-top: 50%;
 }
