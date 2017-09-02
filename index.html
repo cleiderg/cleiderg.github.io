@@ -1,95 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <link rel="stylesheet" href="mainstyle.css">
-    <script src="jscript.js"></script>
     <title>Cleider Gomez</title>
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="vendor/jquery/jquery.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
 </head>
 
-<body id="home" data-spy="scroll" data-target=".navbar-fixed-top" data-offset="50">
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href=#home>Cleider Gomez</a>
-            </div>
-            <div>
-                <div class="collapse navbar-collapse" id="myNavbar">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#experience">Experience</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h1>Cleider Gomez</h1>
+                </div>
+                <div class="col-sm-3">
+                    <h2>Projects</h2>
+                </div>
+                <div class="col-sm-3">
+                    <h2>Resume</h2>
                 </div>
             </div>
         </div>
-    </nav>
-
-    <header class="container-fluid text-center">
-            <div class="row-inline">
-                <div class="col-sm-8">
-                    <h1>Hi, my name is Cleider Gomez.</h1>
-                </div>
-            </div>
     </header>
 
-    <section id="about" class="container-fluid text-center">
-        <p>I enjoy developing programs with <strong>Python</strong>, <strong>JavaScript</strong>, and <strong>
-            Bootstrap</strong> as my framework. With my eye for design and use of <strong>Git</strong>, I enjoy coding / designing websites with friends. I plan to create web applications,
-            programs, and more to learn practical programming skills in the future.</p>
+    <section>
+        <div class="headShot">
+            <img src="img/headshot.jpg" style="width: 940px;height: 654px;">
+        </div>
     </section>
 
-    <section id="experience" class="container-fluid text-center">
-        <p>I will be ICS Student Council's <strong>Secretary</strong> for the 2017-2018 school year at UCI.</p>
-    </section>
-
-    <section id="projects" class="container-fluid text-center">
-
-        <p>With a team of 3 I developed and designed our club's website. It can be found <strong>here</strong>.</p>
-    </section>
-
-    <section id="contact" class="container-fluid text-center">
-        <div class="contact-section">
+    <section class="medias">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-8 col-lg-offset-2">
-                    <h2>Contact Me</h2>
-                    <p>Feel free to email me, either with feedback or just to say hi!</p>
-                    <p><a href="mailto:cleiderg@uci.edu">cleiderg@uci.edu</a>
-                    </p>
-                    <ul class="list-inline banner-social-buttons">
-                        <li>
-                            <a href="https://twitter.com/cleidergomez" class="btn btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-                        </li>
-                        <li>
-                            <a href="https://www.instagram.com/cleider.gomez/" class="btn btn-lg"><i class="fa fa-instagram fa-fw"></i> <span class="network-name">Instagram</span></a>
-                        </li>
-                        <li>
-                            <a href="https://www.facebook.com/klayder" class="btn btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/cleiderg" class="btn btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-                        </li>
-                    </ul>
+                <div class="col-sm-4">
+                        <a href="https://github.com/cleiderg" class="btn"><i class="fa fa-github fa-fw" style="color: black"></i> </a>
+                </div>
+                <div class="col-sm-4">
+                        <a href="https://github.com/cleiderg" class="btn"><i class="fa fa-linkedin fa-fw" style="color: darkblue"></i> </a>
+                </div>
+                <div class="col-sm-4">
+                        <a href="https://github.com/cleiderg" class="btn"><i class="fa fa-git fa-fw" style="color: red"></i></a>
+
+                </div>
+            </div>
+
+            <div class="row second">
+                <div class="col-sm-6">
+                    <a href="https://github.com/cleiderg" class="btn"><i class="fa fa-facebook fa-fw" style="color: dodgerblue"></i> </a>
+                </div>
+                <div class="col-sm-6">
+                    <a href="https://github.com/cleiderg" class="btn"><i class="fa fa-twitter fa-fw"style="color: cornflowerblue"></i> </a>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <a href="https://github.com/cleiderg" class="btn"><i class="fa fa-instagram fa-fw" style="color: lightcoral"></i> </a>
                 </div>
             </div>
         </div>
     </section>
 
+    <footer>
+        <div><p>Created with love by Cleider Gomez.</p></div>
+    </footer>
 
 </body>
 </html>

@@ -1,0 +1,72 @@
+/* Extra small devices (phones, less than 576px) */
+/* No media query since this is the default in Bootstrap. If passed these px, it is in that category.*/
+
+/* padding: top, right, bottom, left */
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    html{
+        background-color: white;
+    }
+    header{
+        padding: 20px 10px 20px 10px;
+        background-color: white;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        overflow:hidden;
+    }
+
+
+    h1, h2 {
+        font-size: 50px;
+        font-weight: 400;
+    }
+
+
+
+
+    .headShot{
+        padding: 150px 20px 20px 20px;
+    }
+
+    .links{
+        text-align: center;
+
+    }
+
+    .btn{
+        font-size: 150px;
+    }
+    .medias{
+        text-align: center;
+    }
+    .second{
+        padding: 0 120px 0 120px;
+    }
+
+
+    footer{
+        position: absolute;
+        bottom:0;
+        width: 100%;
+        overflow: hidden;
+        text-align: center;
+        font-size: 30px;
+
+    }
+}
+
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    html{
+        background-color: green;
+    }
+
+}
