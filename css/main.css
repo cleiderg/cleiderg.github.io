@@ -11,11 +11,11 @@ html {
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
     html{
-        background-color: white;
+        background-color: whitesmoke;
     }
     header{
-        padding: 20px 10px 20px 10px;
-        background-color: white;
+        padding: 20px 10px 20px 27px;
+        background-color: whitesmoke;
         position: absolute;
         top: 0;
         width: 100%;
@@ -25,11 +25,19 @@ html {
 
     h1, h2 {
         font-size: 50px;
+        font-weight: 400;
+    }
+
+    p{
+        color: #555;
+        font-weight: 300;
+        font: normal 100% Roboto, sans-serif;
     }
 
 
     .headShot{
         padding: 140px 20px 20px 30px;
+        background-color: whitesmoke;
     }
 
     .links{
@@ -42,6 +50,7 @@ html {
     }
     .medias{
         text-align: center;
+        background-color: whitesmoke;
 
     }
 
@@ -59,9 +68,10 @@ html {
 
     .about{
         text-align: center;
-        font-size: 60px;
+        font-size: 54px;
         padding: 30px;
         line-height: 1;
+        background-color: whitesmoke;
 
     }
 }
