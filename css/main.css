@@ -10,12 +10,18 @@ html {
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-    html{
-        background-color: whitesmoke;
+
+    body{
+        background: #24252D;
+        color: #CACACC;
+
+
+    }
+    section{
+        background: #24252D;
     }
     header{
-        padding: 20px 10px 20px 27px;
-        background-color: whitesmoke;
+        padding: 20px 10px 20px 40px;
         position: absolute;
         top: 0;
         width: 100%;
@@ -24,20 +30,29 @@ html {
 
 
     h1, h2 {
-        font-size: 50px;
+        font-size: 46px;
         font-weight: 400;
+
+    }
+    h3{
+        font-size: 46px;
+        font-weight: 400;
+
     }
 
     p{
-        color: #555;
-        font-weight: 300;
-        font: normal 100% Roboto, sans-serif;
+
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: 400;
+
     }
+
 
 
     .headShot{
         padding: 140px 20px 20px 30px;
-        background-color: whitesmoke;
     }
 
     .links{
@@ -46,11 +61,10 @@ html {
     }
 
     .btn{
-        font-size: 90px;
+        font-size: 80px;
     }
     .medias{
         text-align: center;
-        background-color: whitesmoke;
 
     }
 
@@ -68,12 +82,33 @@ html {
 
     .about{
         text-align: center;
-        font-size: 54px;
-        padding: 30px;
-        line-height: 1;
-        background-color: whitesmoke;
+        font-size: 38px;
+        padding: 15px 80px 0px 80px;
+        line-height: 1.25;
 
     }
+
+    #newHead{
+        margin-left: 60px;
+        padding-bottom: 10px;
+
+    }
+    .news{
+        margin: 50px 0 0 50px;
+        font-size: 40px;
+
+    }
+
+    table{
+        width: 100%;
+    }
+    th{
+        color: #24252D ;
+    }
+    td{
+        padding-left: 30px;
+    }
+
 }
 
 
