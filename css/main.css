@@ -25,7 +25,7 @@ html {
         position: absolute;
         top: 0;
         width: 100%;
-        overflow:hidden;
+        overflow: hidden;
     }
 
 
@@ -49,6 +49,9 @@ html {
 
     }
 
+    a{
+        color: #CACACC;
+    }
 
 
     .headShot{
@@ -83,16 +86,12 @@ html {
     .about{
         text-align: center;
         font-size: 38px;
-        padding: 15px 80px 0px 80px;
+        padding: 0px 80px 0px 80px;
         line-height: 1.25;
 
     }
 
-    #newHead{
-        margin-left: 60px;
-        padding-bottom: 10px;
 
-    }
     .news{
         margin: 50px 0 0 50px;
         font-size: 40px;
@@ -101,12 +100,19 @@ html {
 
     table{
         width: 100%;
+        padding-bottom: 50px;
     }
     th{
         color: #24252D ;
     }
     td{
         padding-left: 30px;
+    }
+
+    #jobTitle{
+        font-size: 63px;
+        font-weight: 500;
+        color: lightseagreen;
     }
 
 }
