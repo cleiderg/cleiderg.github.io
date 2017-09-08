@@ -22,7 +22,6 @@ html {
     }
     header{
         padding: 20px 10px 20px 40px;
-        position: absolute;
         top: 0;
         width: 100%;
         overflow: hidden;
@@ -41,7 +40,6 @@ html {
     }
 
     p{
-
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         font-style: normal;
         font-variant: normal;
@@ -56,7 +54,7 @@ html {
 
 
     .headShot{
-        padding: 140px 20px 20px 30px;
+        padding: 10px 20px 20px 30px;
     }
 
     .links{
@@ -73,12 +71,9 @@ html {
     }
 
 
-
     footer{
-        position: absolute;
         bottom:0;
         width: 100%;
-        overflow: hidden;
         text-align: center;
         font-size: 30px;
 
@@ -91,7 +86,6 @@ html {
         line-height: 1.25;
 
     }
-
 
     .news{
         margin: 50px 0 100px 50px;
@@ -112,9 +106,24 @@ html {
     #jobTitle{
         font-size: 63px;
         font-weight: 500;
-        color: lightseagreen;
+        color: #b8c4c6;
     }
 
+    h4{
+        font-size: 46px;
+        font-weight: 500;
+        color: floralwhite;
+    }
+
+    .project{
+        text-align: center;
+        padding-bottom: 80px;
+        font-size: 38px;
+        line-height: 1.25;
+    }
+    .projectText{
+        padding: 0 80px 0px 80px;
+    }
 }
 
 
