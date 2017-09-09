@@ -62,7 +62,7 @@ html {
 
     }
 
-    .btn{
+    .btn, .social-buttons{
         font-size: 80px;
     }
     .medias{
@@ -73,6 +73,8 @@ html {
 
     footer{
         bottom:0;
+        padding-top: 80px;
+        position: absolute;
         width: 100%;
         text-align: center;
         font-size: 30px;
@@ -113,11 +115,12 @@ html {
         font-size: 46px;
         font-weight: 500;
         color: floralwhite;
+        padding: 0 60px 0 60px;
     }
 
     .project{
         text-align: center;
-        padding-bottom: 80px;
+        padding-bottom: 40px;
         font-size: 38px;
         line-height: 1.25;
     }
@@ -130,7 +133,7 @@ html {
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
     html{
-        background-color: green;
+        background-color: #24252D;
     }
 
 }
