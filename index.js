@@ -5,8 +5,14 @@ $(document).ready(function(){
     }
     glow();
 
-    function stars(){
 
-    }
+
+    $(function(){
+        $( ".projectText" ).bind( "tap", tapHandler );
+
+        function tapHandler( event ){
+            $( event.target ).animate({opacity:'0.1'});
+        }
+    });
 
 });
