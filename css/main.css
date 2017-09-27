@@ -6,7 +6,10 @@
 html {
     position: relative;
     min-height: 100%;
+    background-color: #24252D;
+
 }
+
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
@@ -55,6 +58,10 @@ html {
 
     .headShot{
         padding: 10px 20px 20px 30px;
+    }
+    .headShot img{
+        width: 920px;
+        height: 634px;
     }
 
     .links{
@@ -124,15 +131,24 @@ html {
         font-size: 38px;
         line-height: 1.25;
     }
-    .projectText{
-        padding: 0 80px 0px 80px;
+
+    .project p{
+        padding: 15px 80px 0 80px;
+        font-size: 38px;
     }
 
     .btnPro{
         font-size: 46px;
-        background-color: transparent; }
+        background-color: transparent;
+        border-style: solid;
+        border-width: 2px;
+        border-color: navajowhite;
 
+    }
 
+    .btnPro:active {
+        color: white;
+    }
     .btnPro:focus {
         color: lightgray;
     }
@@ -147,6 +163,153 @@ html {
 @media (min-width: 992px) {
     html{
         background-color: #24252D;
+
     }
+
+    body{
+        background: #24252D;
+        color: #CACACC;
+
+
+    }
+    section{
+        background: #24252D;
+    }
+    header{
+        padding: 20px 10px 20px 40px;
+        top: 0;
+        width: 100%;
+        overflow: hidden;
+    }
+
+
+    h1, h2 {
+        font-size: 28px;
+        font-weight: 400;
+
+    }
+    h3{
+        font-size: 32px;
+        font-weight: 400;
+
+    }
+
+    p{
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: 400;
+
+    }
+
+    a{
+        color: #CACACC;
+        text-decoration: underline;
+    }
+
+
+
+    .links{
+        text-align: center;
+
+    }
+
+    .btn, .social-buttons{
+        font-size: 50px;
+    }
+    .medias{
+        text-align: center;
+
+    }
+
+
+    .headShot img{
+        margin-left: 60px;
+        width: 540px;
+        height: 380px;
+    }
+
+
+
+    footer{
+        bottom:0;
+        padding-top: 80px;
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        font-size: 16px;
+
+    }
+
+    .about{
+        text-align: left;
+        font-size: 16px;
+        line-height: 1.25;
+    }
+
+    .news{
+        margin: 50px 0 100px 50px;
+        font-size: 23px;
+
+    }
+
+    table{
+        width: 100%;
+    }
+    th{
+        color: #24252D ;
+    }
+    td{
+        padding-left: 30px;
+    }
+
+    #jobTitle{
+        font-size: 36px;
+        font-weight: 500;
+        color: #b8c4c6;
+    }
+
+    h4{
+        font-size: 46px;
+        font-weight: 500;
+        color: floralwhite;
+        padding: 0 60px 0 60px;
+    }
+
+    .project{
+        text-align: center;
+        padding-bottom: 40px;
+        font-size: 23px;
+        line-height: 1.25;
+    }
+
+    .project p{
+        padding: 15px 80px 0 80px;
+        font-size: 18px;
+    }
+
+    .btnPro{
+        font-size: 24px;
+        background-color: transparent;
+        border-style: solid;
+        border-width: 2px;
+        border-color: navajowhite;
+
+    }
+
+    .btnPro:active {
+        color: white;
+    }
+    .btnPro:focus {
+        color: lightgray;
+    }
+    .btnPro {
+        color: white;
+    }
+
+    .secs{
+        display: inline-block;
+    }
+
 
 }
