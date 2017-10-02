@@ -12,7 +12,7 @@ html {
 
 
 /* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {
+@media (min-width: 481px) {
 
     body{
         background: #24252D;
@@ -28,6 +28,7 @@ html {
         top: 0;
         width: 100%;
         overflow: hidden;
+        background-color: #2c2e38;
     }
 
 
@@ -176,7 +177,7 @@ html {
         background: #24252D;
     }
     header{
-        padding: 20px 10px 20px 40px;
+        padding: 20px 10px 20px 110px;
         top: 0;
         width: 100%;
         overflow: hidden;
@@ -184,7 +185,7 @@ html {
 
 
     h1, h2 {
-        font-size: 28px;
+        font-size: 25px;
         font-weight: 400;
 
     }
@@ -215,18 +216,19 @@ html {
     }
 
     .btn, .social-buttons{
-        font-size: 50px;
+        font-size: 42px;
     }
-    .medias{
+    .medias {
         text-align: center;
-
+        margin-left: 32px;
     }
-
-
     .headShot img{
         margin-left: 60px;
         width: 540px;
         height: 380px;
+        border-width: 6px;
+        border-color: antiquewhite;
+        border-style: solid;
     }
 
 
@@ -242,13 +244,13 @@ html {
     }
 
     .about{
-        text-align: left;
-        font-size: 16px;
+        text-align: right;
+        font-size: 19px;
         line-height: 1.25;
     }
 
     .news{
-        margin: 50px 0 100px 50px;
+        margin: 50px 0 100px 120px;
         font-size: 23px;
 
     }
@@ -258,15 +260,16 @@ html {
     }
     th{
         color: #24252D ;
+
     }
     td{
-        padding-left: 30px;
+        padding-left: 70px;
     }
 
     #jobTitle{
-        font-size: 36px;
+        font-size: 42px;
         font-weight: 500;
-        color: #b8c4c6;
+        color: orangered;
     }
 
     h4{
@@ -279,12 +282,15 @@ html {
     .project{
         text-align: center;
         padding-bottom: 40px;
-        font-size: 23px;
+        font-size: 20px;
         line-height: 1.25;
+    }
+    .allProjects{
+        padding-top: 40px;
     }
 
     .project p{
-        padding: 15px 80px 0 80px;
+        padding: 15px 400px 0 400px;
         font-size: 18px;
     }
 
@@ -310,6 +316,7 @@ html {
     .secs{
         display: inline-block;
     }
+    .two{padding-top: 120px;}
 
 
 }
