@@ -1,0 +1,169 @@
+/*!
+ * Start Bootstrap - Scrolling Nav (http://startbootstrap.com/template-overviews/scrolling-nav)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-scrolling-nav/blob/master/LICENSE)
+ */
+
+html{
+    background-color: #F0F5F9;
+}
+
+nav{
+    background-color: #C9D6DF;
+}
+
+nav, a{
+    color: #1E2022;
+}
+
+.navbar .navbar-brand:hover{
+    color: grey;
+}
+.navbar .navbar-brand:focus {
+    color: darkslategrey;
+}
+
+
+.navbar .navbar-nav > li > a:hover{
+    color: grey;
+
+}
+
+.navbar .navbar-nav > li > a:focus {
+    color: darkslategrey;
+
+}
+.custom-toggler.navbar-toggler {
+    border-color: #1E2022;
+}
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#1E2022' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+header {
+    padding: 154px 0 100px 0;
+    background-color: #F0F5F9;
+    color: #52616B;
+}
+
+.list-inline{
+    text-align: center;
+}
+.list-inline > li{
+    text-align: center;
+    margin: 0 -20px 0 -20px;
+}
+.btn{
+    font-size: 30px;
+}
+
+table{
+    width: 100%;
+    text-align: left;
+}
+th{
+    color: #24252D ;
+}
+
+header, a:hover{
+    color: grey;
+}
+
+.resume> a.btn{
+    border-width: 2px;
+    border-color: black;
+    border-style: solid;
+}
+
+header, a:focus{
+    color: darkslategrey;
+}
+
+div.col-lg-6 {
+    text-align: center;
+}
+
+.resume > .btn{
+    font-size: 16px;
+}
+
+section{
+    background-color: #F0F5F9;
+}
+
+p{
+    color: #1E2022;
+}
+
+h4.card-title{
+    text-align: center;
+    margin: 10px;
+}
+
+p.card-text{
+    padding: 0 20px 0 20px;
+}
+
+div.col-lg-4{
+    margin-bottom: 25px;
+}
+
+.social-buttons > .list-inline-item{
+    padding: 0 30px 0 30px;
+    font-size: 25px;
+}
+
+footer{
+    background-color: #C9D6DF;
+}
+.col-lg-6 > img{
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-style: solid;
+    border-color: #C9D6DF;
+    border-width: 2px;
+}
+
+@media (min-width: 992px) {
+  header {
+      padding: 214px 0 160px 0;
+  }
+
+
+    .container{
+        width: 1035px;
+    }
+    .list-inline > li{
+        text-align: center;
+        margin: 0 8px 0 8px;
+    }
+    .btn{
+        font-size: 24px;
+    }
+    div.col-lg-6 {
+        text-align: left;
+    }
+
+    table{
+        width: 100%;
+    }
+    th{
+        color: #24252D ;
+
+    }
+    td{
+        padding-left: 70px;
+        padding-top: 15px;
+    }
+    img{
+        max-width: 100%;
+        height: auto;
+        text-align: center;
+    }
+
+}
+
+section {
+    padding: 100px 0 150px 0;
+}
