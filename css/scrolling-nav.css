@@ -5,11 +5,11 @@
  */
 
 html{
-    background-color: #F0F5F9;
+    background-color: #fff;
 }
 
 nav{
-    background-color: #C9D6DF;
+    background-color: #fff;
 }
 
 nav, a{
@@ -41,8 +41,8 @@ nav, a{
 }
 
 header {
-    padding: 154px 0 100px 0;
-    background-color: #F0F5F9;
+    padding: 58px 0 100px 0;
+    background-color: #fff;
     color: #52616B;
 }
 
@@ -88,7 +88,7 @@ div.col-lg-6 {
 }
 
 section{
-    background-color: #F0F5F9;
+    background-color: #fff;
 }
 
 p{
@@ -114,15 +114,13 @@ div.col-lg-4{
 }
 
 footer{
-    background-color: #C9D6DF;
+    background-color: #fff;
 }
 .col-lg-6 > img{
     max-width: 100%;
     height: auto;
     margin-bottom: 20px;
-    border-style: solid;
-    border-color: #C9D6DF;
-    border-width: 2px;
+
 }
 
 @media (min-width: 992px) {
