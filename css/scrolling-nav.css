@@ -4,10 +4,6 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-scrolling-nav/blob/master/LICENSE)
  */
 
-html{
-    background-color: #ff;
-}
-
 nav{
     background-color: #fff;
 }
@@ -44,10 +40,12 @@ nav, a{
 }
 
 header {
-    padding: 58px 0 100px 0;
+    padding: 136px 0 100px 0;
     background-color: #fff;
     color: #52616B;
 }
+
+
 
 .list-inline{
     text-align: center;
@@ -57,15 +55,20 @@ header {
     margin: 0 -20px 0 -20px;
 }
 .btn{
-    font-size: 30px;
+    font-size: 20px;
 }
 
 table{
     width: 100%;
+    margin: auto;
     text-align: left;
+}
+td{
+    padding-top: 10px;
 }
 th{
     color: #24252D ;
+    
 }
 
 header, a:hover{
@@ -124,8 +127,29 @@ footer{
     margin-bottom: 20px;
 
 }
+    
 
-@media (min-width: 992px) {
+
+@media (min-width: 768px) and (max-width : 1024px){
+    
+    td{
+        padding-top: 12px;
+    }
+    table{
+       margin: auto;
+        width: 50%;
+    }
+        
+}
+
+@media (max-width: 700px){
+    .photoname{
+    margin-left: 60px;
+}
+    
+}
+
+@media (min-width: 1025px) {
   header {
       padding: 214px 0 160px 0;
   }
@@ -155,9 +179,8 @@ footer{
 
     }
     td{
-        padding-left: 15px;
-        padding-top: 15px;
-        text-align: 
+        padding-left: 50px;
+        padding-top: 25px;
     }
     img{
         max-width: 100%;
