@@ -50,8 +50,12 @@ li {
   text-decoration: none;
 }
 
+li > .book{
+  margin: -10px 0px -20px 0px;
+
+}
 .book-details {
-  margin: 30px 0;
+  margin: 10px 0;
 }
 
 .book-details  .clearfix {
