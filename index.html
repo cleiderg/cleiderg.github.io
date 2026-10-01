@@ -1,37 +1,257 @@
 <!DOCTYPE html>
-<head>
+<html lang="en">
+  <head>
     <meta charset="utf-8">
-    <title>About | Cleider Gomez</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Cleider Gomez</title>
+    <meta name="description" content="Front-end engineer building interfaces for autonomous agent systems. Computer Science student at UC Irvine, previously a front-end software engineer intern at Taboola.">
     <meta name="author" content="Cleider Gomez">
-    <meta name="description" content="">
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="About | Cleider Gomez" />
+    <link rel="canonical" href="https://cleidergomez.com/">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Link previews (Open Graph / Twitter) -->
+    <meta property="og:type" content="profile">
+    <meta property="og:url" content="https://cleidergomez.com/">
+    <meta property="og:title" content="Cleider Gomez">
+    <meta property="og:description" content="Front-end engineer building interfaces for autonomous agent systems.">
+    <meta property="og:site_name" content="Cleider Gomez">
+    <meta property="profile:first_name" content="Cleider">
+    <meta property="profile:last_name" content="Gomez">
+    <meta name="twitter:card" content="summary">
 
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/skeleton.css">
-    <link rel="stylesheet" href="css/custom.css">
-</head>
-<body>
+    <!-- Structured data so search engines know this page is about a person -->
+    <script type="application/ld+json">
+    { 
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Cleider Gomez",
+      "url": "https://cleidergomez.com/",
+      "jobTitle": "Front-end engineer",
+      "affiliation": {
+        "@type": "CollegeOrUniversity",
+        "name": "University of California, Irvine"
+      },
+      "sameAs": [
+        "https://github.com/cleiderg",
+        "https://www.linkedin.com/in/cleidergomez/"
+      ]
+    }
+    </script>
 
-    <div class="container">
-            <div class="three columns sidebar">
-                <nav>
-                    <h3 id="logo"><a href="/">Cleider Gomez</a></h3>
-                    <ul>
-                        <li><a target="_blank" href="https://github.com/cleiderg">code</a></li>
-                        <li><a target="_blank" href="https://www.linkedin.com/in/cleidergomez/">linkedin</a></li>
-                        <li><a href="/bookshelf">bookshelf</a></li>
-                    </ul>
-                </nav>
-                &nbsp;
-            </div>
-            <div class="twelve columns offset-by-one content">
-            <h3>About</h3>
-            <br>
-            <p>I currently study Computer Science at UCI. Two summers ago I interned as a Front End Software Engineer at <a href="https://www.taboola.com/" target="_blank">Taboola</a>.</p>
-            </div>
+    <!-- Same styles as blog/index.html and blog/post-template.html. Change all three together. -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font: 15px/1.7 ui-monospace, menlo, monospace;
+        color: #0c0c0c;
+        background: #fff;
+        -webkit-text-size-adjust: 100%;
+        /* Same layout as openai.com articles: a 676px text column, centered,
+           with the section nav floating in the left margin. 740px = 676px
+           text + 2 × 32px padding. */
+        display: grid;
+        grid-template-columns: 1fr 740px 1fr;
+        max-width: 1408px;
+        margin: 0 auto;
+        padding: 48px 16px;
+      }
+
+      /* Side nav: a rounded cream panel around the links. */
+      .toc {
+        position: sticky;
+        top: 48px;
+        align-self: start;
+        margin-right: 32px;
+        padding: 24px;
+        border-radius: 16px;
+        background: #fbf7ef;
+        font-size: 12px;
+      }
+
+      .toc a {
+        display: block;
+        padding: 4px 0;
+        text-decoration: none;
+      }
+
+      .page > * {
+        padding: 24px 32px;
+      }
+
+      header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 8px 24px;
+      }
+
+      /* Nav links are pills; the current page's pill is cream. */
+      header nav {
+        margin: -4px -12px;
+      }
+
+      header nav a {
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 999px;
+      }
+
+      header nav a + a {
+        margin-left: 4px;
+      }
+
+      [aria-current="page"] {
+        background: #fbf7ef;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      a:hover,
+      a:focus {
+        color: gray;
+      }
+
+      header a,
+      .links a {
+        text-decoration: none;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-size: inherit;
+        font-weight: normal;
+      }
+
+      h2 {
+        margin-bottom: 16px;
+        text-transform: uppercase;
+      }
+
+      p + p,
+      .links {
+        margin-top: 16px;
+      }
+
+      .muted {
+        color: #666;
+      }
+
+      .links a + a {
+        margin-left: 16px;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      li {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+      }
+
+      ::selection {
+        background: #89a6ff;
+      }
+
+      /* Not enough room for the side nav: hide it and pin the header instead. */
+      @media (max-width: 1100px) {
+        body {
+          display: block;
+        }
+
+        .toc {
+          display: none;
+        }
+
+        .page {
+          max-width: 740px;
+          margin: 0 auto;
+        }
+
+        header {
+          position: sticky;
+          top: 0;
+          background: #fff;
+        }
+      }
+
+      @media (max-width: 600px) {
+        body {
+          font-size: 14px;
+          padding: 16px;
+        }
+
+        .page > * {
+          padding: 20px 16px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="toc">
+      <a href="#about">About</a>
+      <a href="#loop">What I'm Working On</a>
+      <a href="#writing">Writing</a>
+    </nav>
+
+    <div class="page">
+      <header>
+        <a href="/">Cleider Gomez</a>
+        <nav>
+          <a href="/" aria-current="page">About</a>
+          <a href="/blog/">Blog</a>
+          <a href="https://github.com/cleiderg" rel="me">GitHub</a>
+          <a href="https://www.linkedin.com/in/cleidergomez/" rel="me">LinkedIn</a>
+        </nav>
+      </header>
+
+      <section id="about">
+        <h1>Front-end engineer building interfaces for autonomous agent systems.</h1>
+        <p class="muted">CS @ UCI · Previously front-end SWE intern @ Taboola</p>
+      </section>
+
+      <section id="loop">
+        <h2>Featured project</h2>
+
+        <!-- Demo GIF goes here once recorded (10–15s of the UI picking up a ticket):
+        <img src="/loop-demo.gif" alt="Loop's UI picking up a ticket" width="616" height="350" loading="lazy">
+        -->
+
+        <h3>Loop</h3>
+        <p>
+          A local autonomous agent that watches your bugs, logs, docs and CI, and
+          works through them on a heartbeat. Includes a live UI to watch and steer.
+        </p>
+        <p class="muted">TypeScript · Node.js · SQLite · Claude Code</p>
+
+        <!-- Add once they exist:
+        <div class="links">
+          <a href="/loop">[ Read the case study → ]</a>
+          <a href="https://github.com/cleiderg/Loop">[ GitHub ]</a>
         </div>
+        -->
+      </section>
+
+      <section>
+        <h2 id="writing">Writing</h2>
+        <ul>
+          <li><a href="/blog/post-slug">Post title</a> <span class="muted">Oct 2026</span></li>
+        </ul>
+        <div class="links"><a href="/blog/">[ All posts → ]</a></div>
+      </section>
+
+      <section>
+      </section>
     </div>
-</body>
+  </body>
+</html>

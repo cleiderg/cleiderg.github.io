@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Blog – Cleider Gomez</title>
+    <meta name="description" content="Writing by Cleider Gomez on building interfaces for autonomous agent systems.">
+    <meta name="author" content="Cleider Gomez">
+    <link rel="canonical" href="https://cleidergomez.com/blog/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cleidergomez.com/blog/">
+    <meta property="og:title" content="Blog – Cleider Gomez">
+    <meta property="og:description" content="Writing on building interfaces for autonomous agent systems.">
+    <meta property="og:site_name" content="Cleider Gomez">
+    <meta name="twitter:card" content="summary">
+
+    <!-- Same styles as index.html and blog/post-template.html. Change all three together. -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font: 15px/1.7 ui-monospace, menlo, monospace;
+        color: #0c0c0c;
+        background: #fff;
+        padding: 48px 16px;
+        -webkit-text-size-adjust: 100%;
+      }
+
+      .page {
+        max-width: 740px; /* 676px text + padding, same as index.html */
+        margin: 0 auto;
+      }
+
+      .page > * {
+        padding: 24px 32px;
+      }
+
+      header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 8px 24px;
+      }
+
+      /* Nav links are pills; the current page's pill is cream. */
+      header nav {
+        margin: -4px -12px;
+      }
+
+      header nav a {
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 999px;
+      }
+
+      header nav a + a {
+        margin-left: 4px;
+      }
+
+      [aria-current="page"] {
+        background: #fbf7ef;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      a:hover,
+      a:focus {
+        color: gray;
+      }
+
+      header a {
+        text-decoration: none;
+      }
+
+      h1 {
+        font-size: inherit;
+        font-weight: normal;
+        margin-bottom: 16px;
+        text-transform: uppercase;
+      }
+
+      .muted {
+        color: #666;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      li {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+      }
+
+      li + li {
+        margin-top: 8px;
+      }
+
+      ::selection {
+        background: #89a6ff;
+      }
+
+      /* Small screens: pin the header to the top. */
+      @media (max-width: 1100px) {
+        header {
+          position: sticky;
+          top: 0;
+          background: #fff;
+        }
+      }
+
+      @media (max-width: 600px) {
+        body {
+          font-size: 14px;
+          padding: 16px;
+        }
+
+        .page > * {
+          padding: 20px 16px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page">
+      <header>
+        <a href="/">Cleider Gomez</a>
+        <nav>
+          <a href="/">About</a>
+          <a href="/blog/" aria-current="page">Blog</a>
+          <a href="https://github.com/cleiderg">GitHub</a>
+          <a href="https://www.linkedin.com/in/cleidergomez/">LinkedIn</a>
+        </nav>
+      </header>
+
+      <section>
+        <h1>Blog</h1>
+        <!-- Newest post first. Copy a line, then update the link, title and date:
+          <li><a href="/blog/post-slug">Post title</a> <time class="muted" datetime="2026-10-01">Oct 2026</time></li>
+        -->
+        <ul>
+          <li class="muted">No posts yet.</li>
+        </ul>
+      </section>
+    </div>
+  </body>
+</html>

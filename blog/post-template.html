@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<!--
+  How to publish a post:
+  1. Copy this file to blog/<slug>.html, e.g. blog/agent-heartbeat.html.
+     It will live at cleidergomez.com/blog/agent-heartbeat
+  2. Replace everything marked POST-SLUG, POST TITLE, ONE-SENTENCE SUMMARY and the dates.
+  3. Delete the "noindex" line below. It only keeps this template out of search results.
+  4. List the post's <h2> sections in the side nav (<nav class="toc">).
+  5. Add the post to the top of the list in blog/index.html (and to "Writing" on index.html).
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+
+    <title>POST TITLE – Cleider Gomez</title>
+    <meta name="description" content="ONE-SENTENCE SUMMARY">
+    <meta name="author" content="Cleider Gomez">
+    <link rel="canonical" href="https://cleidergomez.com/blog/POST-SLUG">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://cleidergomez.com/blog/POST-SLUG">
+    <meta property="og:title" content="POST TITLE">
+    <meta property="og:description" content="ONE-SENTENCE SUMMARY">
+    <meta property="og:site_name" content="Cleider Gomez">
+    <meta property="article:published_time" content="2026-10-01">
+    <meta name="twitter:card" content="summary">
+
+    <!-- Same styles as index.html and blog/index.html, plus post styles at the end. -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font: 15px/1.7 ui-monospace, menlo, monospace;
+        color: #0c0c0c;
+        background: #fff;
+        -webkit-text-size-adjust: 100%;
+        /* Same layout as index.html: a 676px text column, centered, with the
+           section nav floating in the left margin. 740px = 676px text +
+           2 × 32px padding. */
+        display: grid;
+        grid-template-columns: 1fr 740px 1fr;
+        max-width: 1408px;
+        margin: 0 auto;
+        padding: 48px 16px;
+      }
+
+      /* Side nav: a rounded cream panel around the links. */
+      .toc {
+        position: sticky;
+        top: 48px;
+        align-self: start;
+        margin-right: 32px;
+        padding: 24px;
+        border-radius: 16px;
+        background: #fbf7ef;
+        font-size: 12px;
+      }
+
+      .toc a {
+        display: block;
+        padding: 4px 0;
+        text-decoration: none;
+      }
+
+      .page > * {
+        padding: 24px 32px;
+      }
+
+      header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 8px 24px;
+      }
+
+      /* Nav links are pills; the current page's pill is cream. */
+      header nav {
+        margin: -4px -12px;
+      }
+
+      header nav a {
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 999px;
+      }
+
+      header nav a + a {
+        margin-left: 4px;
+      }
+
+      [aria-current="page"] {
+        background: #fbf7ef;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      a:hover,
+      a:focus {
+        color: gray;
+      }
+
+      header a {
+        text-decoration: none;
+      }
+
+      .muted {
+        color: #666;
+      }
+
+      ::selection {
+        background: #89a6ff;
+      }
+
+      /* Post */
+      article h1 {
+        font-size: 20px;
+        line-height: 1.4;
+        font-weight: bold;
+      }
+
+      article h2 {
+        font-size: inherit;
+        font-weight: bold;
+        margin-top: 32px;
+      }
+
+      article p,
+      article ul,
+      article ol,
+      article pre,
+      article img {
+        margin-top: 16px;
+      }
+
+      article ul,
+      article ol {
+        padding-left: 24px;
+      }
+
+      article img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+
+      article code {
+        font-family: inherit;
+        background: #f2f2f2;
+        padding: 0 4px;
+      }
+
+      article pre {
+        background: #f2f2f2;
+        padding: 16px;
+        overflow-x: auto;
+      }
+
+      article pre code {
+        padding: 0;
+      }
+
+      /* Not enough room for the side nav: hide it and pin the header instead. */
+      @media (max-width: 1100px) {
+        body {
+          display: block;
+        }
+
+        .toc {
+          display: none;
+        }
+
+        .page {
+          max-width: 740px;
+          margin: 0 auto;
+        }
+
+        header {
+          position: sticky;
+          top: 0;
+          background: #fff;
+        }
+      }
+
+      @media (max-width: 600px) {
+        body {
+          font-size: 14px;
+          padding: 16px;
+        }
+
+        .page > * {
+          padding: 20px 16px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- One link per <h2> in the post. Each <h2> needs a matching id. -->
+    <nav class="toc">
+      <a href="#a-section-heading">A section heading</a>
+    </nav>
+
+    <div class="page">
+      <header>
+        <a href="/">Cleider Gomez</a>
+        <nav>
+          <a href="/">About</a>
+          <a href="/blog/" aria-current="page">Blog</a>
+          <a href="https://github.com/cleiderg">GitHub</a>
+          <a href="https://www.linkedin.com/in/cleidergomez/">LinkedIn</a>
+        </nav>
+      </header>
+
+      <article>
+        <h1>POST TITLE</h1>
+        <time class="muted" datetime="2026-10-01">Oct 1, 2026</time>
+
+        <p>Write the post in plain HTML: paragraphs in &lt;p&gt;, headings in &lt;h2&gt;, and code in &lt;pre&gt;&lt;code&gt;.</p>
+
+        <h2 id="a-section-heading">A section heading</h2>
+        <p>More text, with <a href="https://cleidergomez.com">a link</a> and <code>inline code</code>.</p>
+        <pre><code>console.log("hello");</code></pre>
+      </article>
+    </div>
+  </body>
+</html>
