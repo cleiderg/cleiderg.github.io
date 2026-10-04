@@ -16,119 +16,8 @@
     <meta property="og:site_name" content="Cleider Gomez">
     <meta name="twitter:card" content="summary">
 
-    <!-- Same styles as index.html and blog/post-template.html. Change all three together. -->
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font: 15px/1.7 ui-monospace, menlo, monospace;
-        color: #0c0c0c;
-        background: #fff;
-        padding: 48px 16px;
-        -webkit-text-size-adjust: 100%;
-      }
-
-      .page {
-        max-width: 740px; /* 676px text + padding, same as index.html */
-        margin: 0 auto;
-      }
-
-      .page > * {
-        padding: 24px 32px;
-      }
-
-      header {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 8px 24px;
-      }
-
-      /* Nav links are pills; the current page's pill is cream. */
-      header nav {
-        margin: -4px -12px;
-      }
-
-      header nav a {
-        display: inline-block;
-        padding: 4px 12px;
-        border-radius: 999px;
-      }
-
-      header nav a + a {
-        margin-left: 4px;
-      }
-
-      [aria-current="page"] {
-        background: #fbf7ef;
-      }
-
-      a {
-        color: inherit;
-      }
-
-      a:hover,
-      a:focus {
-        color: gray;
-      }
-
-      header a {
-        text-decoration: none;
-      }
-
-      h1 {
-        font-size: inherit;
-        font-weight: normal;
-        margin-bottom: 16px;
-        text-transform: uppercase;
-      }
-
-      .muted {
-        color: #666;
-      }
-
-      ul {
-        list-style: none;
-      }
-
-      li {
-        display: flex;
-        justify-content: space-between;
-        gap: 16px;
-      }
-
-      li + li {
-        margin-top: 8px;
-      }
-
-      ::selection {
-        background: #89a6ff;
-      }
-
-      /* Small screens: pin the header to the top. */
-      @media (max-width: 1100px) {
-        header {
-          position: sticky;
-          top: 0;
-          background: #fff;
-        }
-      }
-
-      @media (max-width: 600px) {
-        body {
-          font-size: 14px;
-          padding: 16px;
-        }
-
-        .page > * {
-          padding: 20px 16px;
-        }
-      }
-    </style>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230c0c0c'/%3E%3Ctext x='16' y='22' font-family='ui-monospace,menlo,monospace' font-size='16' text-anchor='middle' fill='%23faf9f5'%3Ecg%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="../style.css">
   </head>
 
   <body>
@@ -138,18 +27,18 @@
         <nav>
           <a href="/">About</a>
           <a href="/blog/" aria-current="page">Blog</a>
-          <a href="https://github.com/cleiderg">GitHub</a>
-          <a href="https://www.linkedin.com/in/cleidergomez/">LinkedIn</a>
+          <a href="https://github.com/cleiderg" aria-label="GitHub"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
+          <a href="https://www.linkedin.com/in/cleidergomez/" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
         </nav>
       </header>
 
       <section>
-        <h1>Blog</h1>
-        <!-- Newest post first. Copy a line, then update the link, title and date:
-          <li><a href="/blog/post-slug">Post title</a> <time class="muted" datetime="2026-10-01">Oct 2026</time></li>
-        -->
-        <ul>
-          <li class="muted">No posts yet.</li>
+        <h1 class="label">Blog</h1>
+         <ul>
+        <!-- Newest post first. Copy a line, then update the link, title and date: -->
+          <li><a href="/blog/test">Post title</a> <time class="muted" datetime="2026-10-01">Oct 2026</time></li>
+       
+          <!-- <li class="muted">No posts yet.</li> -->
         </ul>
       </section>
     </div>

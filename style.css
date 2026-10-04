@@ -1,0 +1,298 @@
+/* Shared by every page. Blog-post-only styles are at the bottom.
+   Terminal theme: near-black page, cream text, amber accent. */
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font: 15px/1.7 ui-monospace, menlo, monospace;
+  color: #e8e4da;
+  background: #111;
+  -webkit-text-size-adjust: 100%;
+  /* Same layout as openai.com articles: a 676px text column, centered,
+     with the section nav floating in the left margin. 740px = 676px
+     text + 2 × 32px padding. */
+  display: grid;
+  grid-template-columns: 1fr 740px 1fr;
+  max-width: 1408px;
+  margin: 0 auto;
+  padding: 48px 16px;
+}
+
+.page {
+  grid-column: 2;
+}
+
+.page > * {
+  padding: 24px 32px;
+}
+
+/* Side nav: floats in the left margin as you scroll. toc.js marks the
+   section you're reading. */
+.toc {
+  position: sticky;
+  top: 48px;
+  align-self: start;
+  margin-right: 32px;
+  padding: 24px;
+  border-radius: 16px;
+  background: #1b1b1b;
+  font-size: 12px;
+}
+
+.toc a {
+  display: block;
+  padding: 4px 0;
+  text-decoration: none;
+  color: #777;
+}
+
+.toc [aria-current] {
+  color: #e8e4da;
+}
+
+/* Header: your name on the left, nav pills on the right. */
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px 24px;
+}
+
+header > a {
+  font-size: 22px;
+  letter-spacing: -0.04em;
+}
+
+header nav {
+  margin: -4px -12px;
+}
+
+header nav a {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+
+header nav a + a {
+  margin-left: 4px;
+}
+
+/* GitHub and LinkedIn icons: same color as the text, so hover works too. */
+header nav svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  vertical-align: -3px;
+}
+
+[aria-current="page"] {
+  background: #e8e4da;
+  color: #111;
+}
+
+/* Links */
+a {
+  color: inherit;
+  text-underline-offset: 4px;
+  text-decoration-color: #555;
+  transition: color 0.15s;
+}
+
+a:hover,
+a:focus {
+  color: #f5b74a;
+}
+
+header a,
+.links a {
+  text-decoration: none;
+}
+
+.links {
+  margin-top: 16px;
+}
+
+.links a + a {
+  margin-left: 16px;
+}
+
+/* Type */
+h1,
+h2,
+h3 {
+  font-size: inherit;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 26px;
+  line-height: 1.4;
+  color: #fff;
+}
+
+/* Blinking cursor after the homepage headline. */
+#about h1::after {
+  content: "▍";
+  color: #f5b74a;
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #about h1::after {
+    animation: none;
+  }
+}
+
+/* Section labels: small, gray, spaced out. */
+section > h2,
+.label {
+  margin-bottom: 16px;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  line-height: 1.7;
+  color: #777;
+  text-transform: uppercase;
+}
+
+section > h2::before,
+.label::before {
+  content: "// ";
+}
+
+section > h3 {
+  font-weight: bold;
+  color: #f5b74a;
+}
+
+section + section {
+  margin-top: 16px;
+}
+
+p + p {
+  margin-top: 16px;
+}
+
+.muted {
+  color: #8a8a8a;
+}
+
+/* Small, lighter line tucked right under the one above. */
+.note {
+  margin-top: 0;
+  font-size: 13px;
+  color: #6e6e6e;
+}
+
+/* Lists of posts: title on the left, date on the right. */
+section ul {
+  list-style: none;
+}
+
+section li {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+section li + li {
+  margin-top: 8px;
+}
+
+::selection {
+  background: #f5b74a;
+  color: #111;
+}
+
+/* Blog posts */
+article h1 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+article h2 {
+  font-weight: bold;
+  margin-top: 32px;
+}
+
+article p,
+article ul,
+article ol,
+article pre,
+article img {
+  margin-top: 16px;
+}
+
+article ul,
+article ol {
+  padding-left: 24px;
+}
+
+article img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+article code {
+  font-family: inherit;
+  background: #1f1f1f;
+  padding: 0 4px;
+}
+
+article pre {
+  background: #1b1b1b;
+  padding: 16px;
+  overflow-x: auto;
+}
+
+article pre code {
+  padding: 0;
+}
+
+/* Not enough room for the side nav: hide it and pin the header instead. */
+@media (max-width: 1100px) {
+  body {
+    display: block;
+  }
+
+  .toc {
+    display: none;
+  }
+
+  .page {
+    max-width: 740px;
+    margin: 0 auto;
+  }
+
+  header {
+    position: sticky;
+    top: 0;
+    background: #111;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+    padding: 16px;
+  }
+
+  .page > * {
+    padding: 20px 16px;
+  }
+}
