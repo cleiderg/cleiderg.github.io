@@ -198,6 +198,19 @@ p + p {
   color: #6e6e6e;
 }
 
+/* Homepage intro: space under the headline, school line in cream. */
+#about h1 {
+  margin-bottom: 20px;
+}
+
+#about .muted {
+  color: #e8e4da;
+}
+
+#about .note {
+  margin-top: 4px;
+}
+
 /* Lists of posts: title on the left, date on the right. */
 section ul {
   list-style: none;
