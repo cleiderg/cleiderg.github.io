@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Lantern: an agent that keeps watch over your repository – Cleider Gomez</title>
+    <meta name="description" content="Lantern is a local heartbeat daemon that scans logs, bug reports and tests, files tickets, staffs fixes with Claude Code, and escalates only what needs a human.">
+    <meta name="author" content="Cleider Gomez">
+    <link rel="canonical" href="https://cleidergomez.com/blog/lantern">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://cleidergomez.com/blog/lantern">
+    <meta property="og:title" content="Lantern: an agent that keeps watch over your repository">
+    <meta property="og:description" content="Lantern is a local heartbeat daemon that scans logs, bug reports and tests, files tickets, staffs fixes with Claude Code, and escalates only what needs a human.">
+    <meta property="og:site_name" content="Cleider Gomez">
+    <meta property="article:published_time" content="2026-10-09">
+    <meta name="twitter:card" content="summary">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230c0c0c'/%3E%3Ctext x='16' y='22' font-family='ui-monospace,menlo,monospace' font-size='16' text-anchor='middle' fill='%23faf9f5'%3Ecg%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="../style.css">
+    <script src="../toc.js" defer></script>
+  </head>
+
+  <body>
+    <nav class="toc">
+      <a href="#the-pulse">The pulse</a>
+      <a href="#a-ledger-not-a-chat">A ledger, not a chat</a>
+      <a href="#three-tiers-of-trust">Three tiers of trust</a>
+      <a href="#guardrails-below-the-prompt">Guardrails below the prompt</a>
+      <a href="#paying-for-news-not-for-idling">Paying for news, not idling</a>
+      <a href="#skipped-is-not-clean">Skipped is not clean</a>
+      <a href="#checking-in">Checking in</a>
+      <a href="#try-it">Try it</a>
+    </nav>
+
+    <div class="page">
+      <header>
+        <a href="/">Cleider Gomez</a>
+        <nav>
+          <a href="/">About</a>
+          <a href="/blog/" aria-current="page">Blog</a>
+          <a href="https://github.com/cleiderg" aria-label="GitHub"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
+          <a href="https://www.linkedin.com/in/cleidergomez/" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+        </nav>
+      </header>
+
+      <article>
+        <h1>Lantern: an agent that keeps watch over your repository</h1>
+        <time class="muted" datetime="2026-10-09">Oct 9, 2026</time>
+
+        <p>Most coding agents wait for you to type something. Lantern doesn't. It is a local daemon that wakes up on a schedule, works through a standing checklist against your repository (scan the logs, read the bug inbox, run the tests), and files what it finds as tickets in a ledger it owns. It hands the tickets it can handle to <a href="https://claude.ai/code">Claude Code</a> sessions and escalates to you only what needs a decision.</p>
+
+        <p>You check in when it suits you. One terminal command, or a local web page, shows what it noticed, what it did, what it spent and what is waiting on you.</p>
+
+        <p>This post covers how it works and why it is built the way it is. The short version: an agent that runs while you're away has to be cheap when nothing is happening, honest about what it didn't check, and unable to do real damage even when its model is confused or being manipulated.</p>
+
+        <h2 id="the-pulse">The pulse</h2>
+        <p>Everything Lantern does happens inside a <em>pulse</em>, a heartbeat that fires every few minutes or every hour, depending on the agent:</p>
+        <pre><code>heartbeat --&gt; gates ---&gt; collect ---&gt; Claude turn ---&gt; reap children
+              (budget,   (logs,       (triage,         (record
+               quiet      inbox,       staff,           results,
+               hours...)  tests)       escalate)        push
+                                                        branches)</code></pre>
+        <ul>
+          <li><strong>Gates</strong> decide whether the pulse runs at all. Lantern skips it if the agent is paused, it's inside configured quiet hours, the daily budget is spent, or the repository has uncommitted changes. That last one means it never builds on top of your half-finished work.</li>
+          <li><strong>Collectors</strong> gather evidence in plain TypeScript, without a model. <code>logs.scan</code> reads plain-text or NDJSON log files, <code>inbox.bugs</code> reads exported bug-report emails, and <code>ci.watch</code> runs the test suite on the default branch in a scratch worktree, parses the JUnit XML, and tells a failing test apart from a flaky one.</li>
+          <li><strong>The orchestrator turn</strong> is one Claude Code session that reads a digest of the collectors' findings plus the open ledger, and decides what to do: triage, staff a ticket, or escalate a question.</li>
+          <li><strong>Reaping</strong> collects results from finished child sessions, records them on their tickets, and publishes any branches they produced.</li>
+        </ul>
+        <p>Collectors run in their own phase, before the model is involved. That keeps their time and cost out of the model's budget, lets them be tested without a live model, and means the turn reasons about findings that are minutes old rather than kicking off its own scans.</p>
+
+        <h2 id="a-ledger-not-a-chat">A ledger, not a chat</h2>
+        <p>An agent that runs every fifteen minutes can't hold its memory in a context window. Lantern's memory is a SQLite database: tickets, ticket events, pulses, sessions, escalations and spend. Each pulse starts fresh and reads the state of the world from the ledger.</p>
+        <p>The ledger is also the source of truth for the agent's actions. The model changes things by calling tools on Lantern's own MCP server, such as <code>staff_ticket</code>, <code>escalate</code> and <code>pulse_finding</code>, and each call is written to the database in a transaction. The model's final text is only a summary. Lantern never parses prose to work out what happened.</p>
+        <p>A few ledger features keep the queue worth reading:</p>
+        <ul>
+          <li><strong>Fingerprints and dedupe.</strong> Every error gets a fingerprint. A repeat of an open ticket adds to that ticket instead of opening a new one, and a fingerprint closed as a duplicate follows its links to the ticket that is still open.</li>
+          <li><strong>Noise suppression with an escape hatch.</strong> Dismissing a ticket as noise keeps that error from being filed again for 30 days, unless its rate jumps tenfold. A quiet error that suddenly gets loud is news again.</li>
+          <li><strong>Prior art.</strong> When a new ticket arrives, full-text search over past tickets, ranked by matching fingerprints and code locations, shows the session what was already tried.</li>
+          <li><strong>Triage first.</strong> Nothing a collector files gets worked on until a human accepts it. The agent can notice anything. It can only act on what you've agreed is real.</li>
+        </ul>
+
+        <h2 id="three-tiers-of-trust">Three tiers of trust</h2>
+        <p>Accepted tickets go to Claude Code child sessions, each started at one of three capability tiers:</p>
+        <ul>
+          <li><code>read_only</code> investigates and reports. It can read code, search, and run read-only git commands, and nothing else.</li>
+          <li><code>write_branch</code> works in its own git worktree on a fresh branch. It can edit files, run the agent's configured <code>test_commands</code>, and commit. Lantern then pushes the branch and, on GitHub, opens a <strong>draft</strong> pull request for you to review.</li>
+          <li><code>release</code> is like <code>write_branch</code> plus a tag, and it <strong>never starts</strong> without your explicit approval.</li>
+        </ul>
+        <p>The tiers are enforced by the session's tool set, not by instructions in the prompt. Claude Code's <code>--allowedTools</code> flag only pre-approves tools. It doesn't take the others away. So each tier also starts the session with a restricted list of built-in tools and an explicit deny list. If a tool isn't on a session's list, the session can't call it, whatever the prompt says.</p>
+        <p>The PetClinic example shows the escalation in practice. A bug report says looking up a missing owner returns HTTP 500 instead of 404. You accept it, and a <code>read_only</code> child diagnoses it and writes its findings on the ticket. You comment "fix it", and on the next pulse a <code>write_branch</code> child applies the fix on its own branch, runs the project's tests, and the branch lands on the remote for review.</p>
+
+        <h2 id="guardrails-below-the-prompt">Guardrails below the prompt</h2>
+        <p>Lantern's inputs include log lines, test output and emails from strangers, so it assumes any of them could be an attack. Its safety rules live in code, below the model:</p>
+        <ul>
+          <li><strong>Evidence, never instructions.</strong> Collected text reaches the model only inside a marked untrusted block. Each block's delimiters carry a random nonce, so an email that contains a fake "end of untrusted data" line can't close the block early. In the web UI the same content renders as plain text.</li>
+          <li><strong>No dangerous pushes.</strong> Child sessions can't push at all. Lantern does every push itself, through a pre-push guard that refuses <code>main</code> and <code>master</code>, force-pushes and moving an existing tag.</li>
+          <li><strong>Hard spend ceilings.</strong> Every turn and every child has a cost ceiling, which defaults to $1.50 and is passed straight to the harness. Each agent also has a daily ceiling. An agent that hits it trips and stays stopped until a human runs <code>lantern resume</code>.</li>
+          <li><strong>A kill switch.</strong> <code>lantern pause</code> stops all pulses and kills any running child sessions immediately.</li>
+          <li><strong>Settings split by risk.</strong> You can change the heartbeat, concurrency, budgets and quiet hours from the web page. Anything that decides what a child may run or touch can only be changed in the agent's file on disk.</li>
+        </ul>
+
+        <h2 id="paying-for-news-not-for-idling">Paying for news, not for idling</h2>
+        <p>An always-on agent that runs a model turn every pulse burns money doing nothing. On the PetClinic demo, an idle turn costs $0.10–0.16. At a 15-minute heartbeat that adds up to about $12 a day of "nothing new here".</p>
+        <p>So the collectors, gates and reaping run every pulse, but the expensive part, the Claude turn, runs only when something has changed since the last one. Lantern runs a turn when a collector filed a ticket or hit an error, a human acted, an escalation was answered, a child session finished, or you pressed "Pulse now". It also runs one every couple of hours regardless, so the agent still looks around now and then. An idle agent costs close to nothing.</p>
+
+        <h2 id="skipped-is-not-clean">Skipped is not clean</h2>
+        <p>The most dangerous thing a monitoring agent can say is "all clear" when it didn't actually look. Lantern treats "clean" as a claim about coverage and won't make it without evidence:</p>
+        <ul>
+          <li>A log window with no data is reported as <strong>skipped</strong>, never clean.</li>
+          <li>A pulse's status is worked out from what it actually did, in this order: <em>escalated</em>, then <em>acted</em>, then <em>skipped</em>, then <em>clean</em>. A pulse counts as clean only when at least one check actually ran and found nothing.</li>
+          <li>Status comes from rows in the ledger, not from wording. An early version read status from the model's summary and marked a pulse "escalated" just because the summary said it <em>couldn't</em> escalate. Since then, the database is the only thing that counts.</li>
+        </ul>
+        <p>Thirty days of these honest numbers feed <code>lantern metrics</code>: coverage, how often each collector's tickets turn out to be real, and cost per fix.</p>
+
+        <h2 id="checking-in">Checking in</h2>
+        <p>You can run Lantern entirely from the terminal:</p>
+        <pre><code>lantern status            # agents, last 24 h of pulses, spend
+lantern triage            # accept or dismiss what the collectors filed
+lantern inbox             # questions and release approvals waiting on you
+lantern sessions --live   # running children; lantern kill &lt;session&gt;
+lantern logs &lt;pulse-id&gt;   # everything one pulse did
+lantern metrics           # coverage, precision, cost per fix</code></pre>
+        <p>Or with <code>lantern ui</code>, which serves a local page on <code>127.0.0.1</code>, protected by a token in the URL. It has an overview of every agent's health, a triage queue, ticket histories with their prior art, live-streamed session transcripts, an inbox for escalations, a settings panel, and a doctor view that checks your setup. It updates live over server-sent events, so you can leave it open and watch a pulse happen.</p>
+        <p>Each agent is described by a single Markdown file: YAML front matter for the configuration (repository path, heartbeat, budgets, log sources, test commands) followed by plain-language sections that become its instructions. Before an agent does anything for real, <code>lantern pulse --now --dry-run</code> checks the gates and prints the exact prompt it would get, without running a model or filing anything.</p>
+
+        <h2 id="try-it">Try it</h2>
+        <p>Lantern is MIT-licensed, has one runtime dependency (<code>better-sqlite3</code>), and runs its TypeScript directly on Node 24 with no build step. More than 500 tests cover it, from the ledger and the gates to adversarial log and inbox fixtures that try to break out of the untrusted block.</p>
+        <pre><code>git clone https://github.com/cleiderg/lantern.git
+cd lantern &amp;&amp; npm install &amp;&amp; npm link
+lantern init &amp;&amp; lantern doctor</code></pre>
+        <p>The fastest way to see it work is the <a href="https://github.com/cleiderg/lantern/tree/main/examples/petclinic">Spring PetClinic example</a>. It runs a real Java app that breaks on demand, gives it a small inbox of bug reports (one of them isn't a bug), and points Lantern at a local git remote so nothing can reach GitHub. Start the error traffic, open the UI, and watch tickets appear, get triaged, and turn into reviewed branches.</p>
+        <p>Source and docs are on <a href="https://github.com/cleiderg/lantern">GitHub</a>.</p>
+      </article>
+    </div>
+  </body>
+</html>

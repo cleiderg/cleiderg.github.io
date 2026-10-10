@@ -200,10 +200,12 @@ p + p {
 
 /* Homepage intro: space under the headline, school line in cream. */
 #about h1 {
+  font-size: 23px;
   margin-bottom: 20px;
 }
 
 #about .muted {
+  font-size: 16px;
   color: #e8e4da;
 }
 
@@ -275,6 +277,7 @@ article pre {
 
 article pre code {
   padding: 0;
+  background: none;
 }
 
 /* Not enough room for the side nav: hide it and pin the header instead. */

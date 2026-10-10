@@ -46,7 +46,7 @@
   <body>
     <nav class="toc">
       <a href="#about">About</a>
-      <a href="#loop">What I'm Working On</a>
+      <a href="#lantern">What I'm Working On</a>
       <a href="#writing">Writing</a>
     </nav>
 
@@ -67,35 +67,34 @@
         <p class="note">Previously front-end software engineer intern at Taboola</p>
       </section>
 
-      <section id="loop">
+      <section id="lantern">
         <h2>Featured project</h2>
 
         <!-- Demo GIF goes here once recorded (10–15s of the UI picking up a ticket):
-        <img src="/loop-demo.gif" alt="Loop's UI picking up a ticket" width="616" height="350" loading="lazy">
+        <img src="/lantern-demo.gif" alt="Lantern's UI picking up a ticket" width="616" height="350" loading="lazy">
         -->
 
-        <h3>Loop</h3>
+        <h3>Lantern</h3>
         <p>
-          A local agent that checks a codebase every hour: the bug inbox, app logs,
-          docs and CI. It files what it finds as tickets in its own SQLite ledger,
-          looks up past tickets before acting, then fixes the obvious problems and
-          investigates the rest. Only decisions that need a human reach me, and a
-          live UI shows what it ran, found and spent.
+          A local agent that keeps watch over a repository. On a heartbeat it scans
+          the logs, reads the bug inbox and runs the tests, then files what it finds
+          as tickets in a SQLite ledger it owns. Tickets it can handle go to Claude
+          Code sessions, which open draft pull requests for review. Only decisions
+          that need a human reach me, and a local web page shows what it noticed,
+          did and spent.
         </p>
         <p class="muted">TypeScript · Node.js · SQLite · Claude Code</p>
 
-        <!-- Add once they exist:
         <div class="links">
-          <a href="/loop">[ Read the case study → ]</a>
-          <a href="https://github.com/cleiderg/Loop">[ GitHub ]</a>
+          <a href="/blog/lantern">[ Read the write-up → ]</a>
+          <a href="https://github.com/cleiderg/lantern">[ GitHub ]</a>
         </div>
-        -->
       </section>
 
       <section>
         <h2 id="writing">Writing</h2>
         <ul>
-          <li><a href="/blog/post-slug">Post title</a> <span class="muted">Oct 2026</span></li>
+          <li><a href="/blog/lantern">Lantern: an agent that keeps watch over your repository</a> <span class="muted">Oct 2026</span></li>
         </ul>
         <div class="links"><a href="/blog/">[ All posts → ]</a></div>
       </section>
