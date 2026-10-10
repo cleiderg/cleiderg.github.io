@@ -311,4 +311,31 @@ article pre code {
   .page > * {
     padding: 20px 16px;
   }
+
+  /* Phones: shrink the name and nav so they fit on one line. */
+  header {
+    gap: 8px 12px;
+  }
+
+  header > a {
+    font-size: 17px;
+  }
+
+  header nav {
+    margin: -4px -7px;
+  }
+
+  header nav a {
+    padding: 4px 7px;
+    font-size: 12px;
+  }
+
+  header nav a + a {
+    margin-left: 2px;
+  }
+
+  header nav svg {
+    width: 15px;
+    height: 15px;
+  }
 }
