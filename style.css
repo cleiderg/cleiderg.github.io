@@ -305,11 +305,18 @@ article pre code {
 @media (max-width: 600px) {
   body {
     font-size: 14px;
-    padding: 16px;
+    padding: 8px 12px 16px;
   }
 
   .page > * {
-    padding: 20px 16px;
+    padding: 20px 12px;
+  }
+
+  /* Body text: paragraphs and list items, a step smaller than headings and nav. */
+  section p,
+  article p,
+  article li {
+    font-size: 13px;
   }
 
   /* Phones: shrink the name and nav so they fit on one line. */
