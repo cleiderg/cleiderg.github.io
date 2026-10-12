@@ -213,6 +213,15 @@ p + p {
   margin-top: 4px;
 }
 
+/* Demo GIF: fills the text column at any screen size, keeps its shape. */
+.demo {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 16px 0;
+  border-radius: 8px;
+}
+
 /* Lists of posts: title on the left, date on the right. */
 section ul {
   list-style: none;
