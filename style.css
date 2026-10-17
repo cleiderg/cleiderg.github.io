@@ -82,12 +82,22 @@ header > a {
 header nav {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 0 22px;
 }
 
 header nav a {
   font-size: 18px;
   color: var(--dim);
+}
+
+/* GitHub and LinkedIn: 16×16 pixel-art icons, drawn in the text color. */
+header nav svg {
+  display: block;
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+  shape-rendering: crispEdges;
 }
 
 header nav [aria-current="page"] {
@@ -271,16 +281,30 @@ article pre code {
   }
 }
 
-/* Too narrow for the name and nav on one line: stack them, centered. */
+/* Smaller screens: shrink the name and nav so they stay on one line. */
 @media (max-width: 750px) {
-  header {
-    flex-direction: column;
+  header,
+  header nav {
+    flex-wrap: nowrap;
     align-items: center;
-    gap: 4px;
+  }
+
+  header {
+    gap: 12px;
+  }
+
+  header > a {
+    font-size: 20px;
+    white-space: nowrap;
   }
 
   header nav {
-    justify-content: center;
+    gap: 0 14px;
+  }
+
+  header nav a {
+    font-size: 15px;
+    white-space: nowrap;
   }
 }
 
@@ -301,16 +325,43 @@ article pre code {
     font-size: 13px;
   }
 
-  /* Phones: smaller name and nav; the nav wraps under your name. */
+  /* Phones: name and nav a step smaller again, still on one line. */
   header > a {
-    font-size: 20px;
+    font-size: 16px;
   }
 
   header nav {
-    gap: 0 10px;
+    gap: 0 9px;
   }
 
   header nav a {
-    font-size: 15px;
+    font-size: 12px;
+  }
+}
+
+/* Very narrow phones (iPhone SE 1st gen and smaller): one more step down. */
+@media (max-width: 370px) {
+  body {
+    padding: 8px 8px 16px;
+  }
+
+  .page > * {
+    padding: 20px 8px;
+  }
+
+  header {
+    gap: 6px;
+  }
+
+  header > a {
+    font-size: 14px;
+  }
+
+  header nav {
+    gap: 0 6px;
+  }
+
+  header nav a {
+    font-size: 11px;
   }
 }
