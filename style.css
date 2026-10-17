@@ -139,25 +139,6 @@ h1 {
   color: #fff;
 }
 
-/* Blinking cursor after the homepage headline. */
-#about h1::after {
-  content: "▍";
-  color: #f5b74a;
-  animation: blink 1s steps(1) infinite;
-}
-
-@keyframes blink {
-  50% {
-    opacity: 0;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  #about h1::after {
-    animation: none;
-  }
-}
-
 /* Section labels: small, gray, spaced out. */
 section > h2,
 .label {
@@ -200,7 +181,7 @@ p + p {
 
 /* Homepage intro: space under the headline, school line in cream. */
 #about h1 {
-  font-size: 23px;
+  font-size: 20px;
   margin-bottom: 20px;
 }
 
