@@ -40,64 +40,53 @@
 
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230c0c0c'/%3E%3Ctext x='16' y='22' font-family='ui-monospace,menlo,monospace' font-size='16' text-anchor='middle' fill='%23faf9f5'%3Ecg%3C/text%3E%3C/svg%3E">
     <link rel="stylesheet" href="style.css">
-    <script src="toc.js" defer></script>
   </head>
 
-  <body>
-    <nav class="toc">
-      <a href="#about">About</a>
-      <a href="#lantern">What I'm Working On</a>
-      <a href="#writing">Writing</a>
-    </nav>
-
+  <body class="home">
     <div class="page">
       <header>
         <a href="/">Cleider Gomez</a>
         <nav>
           <a href="/" aria-current="page">About</a>
           <a href="/blog/">Blog</a>
-          <a href="/resume.pdf" target="_blank" rel="noopener">Resume ↗</a>
-          <a href="https://github.com/cleiderg" rel="me" aria-label="GitHub"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
-          <a href="https://www.linkedin.com/in/cleidergomez/" rel="me" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+          <a href="https://github.com/cleiderg" rel="me">GitHub</a>
+          <a href="https://www.linkedin.com/in/cleidergomez/" rel="me">LinkedIn</a>
+          <a href="/resume.pdf" target="_blank" rel="noopener">Resume↗</a>
         </nav>
       </header>
 
-      <section id="about">
-        <h1>I’m a Computer Science undergraduate at the University of California, Irvine, focused on AI agent systems and developer tools.</h1>
-        <p class="muted">Previously front-end software engineer intern at Taboola</p>
-      </section>
+      <main>
+        <section id="about">
+          <h1>
+            I'm a Computer Science undergraduate at the
+            <a href="https://uci.edu">University of California, Irvine</a>, focused on
+            AI agent systems and developer tools. Previously a front-end software
+            engineer intern at <a href="https://www.taboola.com">Taboola</a>.
+          </h1>
+        </section>
 
-      <section id="lantern">
-        <h2>Featured project</h2>
+        <section id="lantern">
+          <p>
+          Right now I'm building <a href="https://github.com/cleiderg/lantern">Lantern</a>, 
+          a local heartbeat daemon that watches a code repository, files issues 
+          as tickets, and hands fixes to AI agents. On a schedule, it scans logs, bug 
+          reports, and test results, files what it finds as tickets, and fixes what’s safe, 
+          leaving anything risky for a person. Every fix arrives as a draft pull request, 
+          built in its own sandbox, where agents are never allowed to push to main. Unlike 
+          most AI coding agents, it keeps persistent memory in a SQLite database, so it can 
+          learn from past fixes and skip issues that aren’t worth a developer’s time.
+          </p>
+          <img class="demo" src="media/lantern-ui-dark.gif" width="960" height="600" alt="Lantern's local dashboard: triage, a bug fixed by an agent, its transcript, pulses and search">
+        </section>
 
-        <h3>Lantern</h3>
-        <p>
-          A local agent that keeps watch over a repository. On a heartbeat it scans
-          the logs, reads the bug inbox and runs the tests, then files what it finds
-          as tickets in a SQLite ledger it owns. Tickets it can handle go to Claude
-          Code sessions, which open draft pull requests for review. Only decisions
-          that need a human reach me, and a local web page shows what it noticed,
-          did and spent.
-        </p>
-        <img class="demo" src="media/lantern-ui-light.gif" width="960" height="600" alt="Lantern's local dashboard: triage, a bug fixed by an agent, its transcript, pulses and search">
-        <p class="muted">TypeScript · Node.js · SQLite · Claude Code</p>
-
-        <div class="links">
-          <a href="/blog/lantern">[ Read the write-up → ]</a>
-          <a href="https://github.com/cleiderg/lantern">[ GitHub ]</a>
-        </div>
-      </section>
-
-      <section>
-        <h2 id="writing">Writing</h2>
-        <ul>
-          <li><a href="/blog/lantern">Lantern: an agent that keeps watch over your repository</a> <span class="muted">Oct 2026</span></li>
-        </ul>
-        <div class="links"><a href="/blog/">[ All posts → ]</a></div>
-      </section>
-
-      <section>
-      </section>
+        <section id="writing">
+          <p>
+            I wrote about how it works in
+            <a href="/blog/lantern">Lantern: an agent that keeps watch over your repository</a>.
+          </p>
+          <p class="meta">TypeScript · Node.js · SQLite · Claude Code</p>
+        </section>
+      </main>
     </div>
   </body>
 </html>

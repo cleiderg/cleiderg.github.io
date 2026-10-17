@@ -1,8 +1,14 @@
-/* Shared by every page. Blog-post-only styles are at the bottom.
-   Terminal theme: near-black page, cream text, amber accent. */
+/* Shared by every page. Blog-post-only styles are near the bottom.
+   Theme: near-black page, gray monospace text (after rushil.me). */
 
 :root {
   color-scheme: dark;
+  --bg: #0a0a0c;
+  --fg: #c9cbd1;
+  --hi: #fff;
+  --dim: #8a8d96;
+  --line: #2a2b31;
+  --accent: #ef4444;
 }
 
 * {
@@ -12,9 +18,9 @@
 }
 
 body {
-  font: 15px/1.7 ui-monospace, menlo, monospace;
-  color: #e8e4da;
-  background: #111;
+  font: 14px/1.45 ui-monospace, menlo, monospace;
+  color: var(--fg);
+  background: var(--bg);
   -webkit-text-size-adjust: 100%;
   /* Same layout as openai.com articles: a 676px text column, centered,
      with the section nav floating in the left margin. 740px = 676px
@@ -43,7 +49,7 @@ body {
   margin-right: 32px;
   padding: 24px;
   border-radius: 16px;
-  background: #1b1b1b;
+  background: #121216;
   font-size: 12px;
 }
 
@@ -51,78 +57,60 @@ body {
   display: block;
   padding: 4px 0;
   text-decoration: none;
-  color: #777;
+  color: var(--dim);
 }
 
 .toc [aria-current] {
-  color: #e8e4da;
+  color: var(--hi);
 }
 
-/* Header: your name on the left, nav pills on the right. */
+/* Header: your name on the left, nav links on the right. */
 header {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
   gap: 8px 24px;
 }
 
 header > a {
-  font-size: 22px;
-  letter-spacing: -0.04em;
+  font-size: 24px;
+  letter-spacing: -0.02em;
+  color: var(--fg);
 }
 
 header nav {
-  margin: -4px -12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 22px;
 }
 
 header nav a {
-  display: inline-block;
-  padding: 4px 12px;
-  border-radius: 999px;
+  font-size: 18px;
+  color: var(--dim);
 }
 
-header nav a + a {
-  margin-left: 4px;
-}
-
-/* GitHub and LinkedIn icons: same color as the text, so hover works too. */
-header nav svg {
-  width: 18px;
-  height: 18px;
-  fill: currentColor;
-  vertical-align: -3px;
-}
-
-[aria-current="page"] {
-  background: #e8e4da;
-  color: #111;
+header nav [aria-current="page"] {
+  color: var(--hi);
+  font-weight: bold;
 }
 
 /* Links */
 a {
   color: inherit;
-  text-underline-offset: 4px;
-  text-decoration-color: #555;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--line);
   transition: color 0.15s;
 }
 
 a:hover,
 a:focus {
-  color: #f5b74a;
+  color: var(--hi);
+  text-decoration-color: currentColor;
 }
 
-header a,
-.links a {
+header a {
   text-decoration: none;
-}
-
-.links {
-  margin-top: 16px;
-}
-
-.links a + a {
-  margin-left: 16px;
 }
 
 /* Type */
@@ -133,65 +121,47 @@ h3 {
   font-weight: normal;
 }
 
-h1 {
-  font-size: 26px;
-  line-height: 1.4;
-  color: #fff;
+/* The homepage intro is a heading for search engines but reads like a paragraph. */
+#about h1 {
+  line-height: inherit;
 }
 
-/* Section labels: small, gray, spaced out. */
-section > h2,
+.page > main {
+  padding-top: 16px;
+}
+
+section + section,
+p + p,
+p + .demo,
+.demo + p {
+  margin-top: 20px;
+}
+
+.muted {
+  color: var(--dim);
+}
+
+/* Small gray detail line, e.g. the tech stack. */
+.meta {
+  font-size: 12px;
+  color: var(--dim);
+}
+
+.meta b {
+  color: var(--hi);
+}
+
+/* Section label on the blog list. */
 .label {
   margin-bottom: 16px;
   font-size: 11px;
   letter-spacing: 0.12em;
-  line-height: 1.7;
-  color: #777;
+  color: var(--dim);
   text-transform: uppercase;
 }
 
-section > h2::before,
 .label::before {
   content: "// ";
-}
-
-section > h3 {
-  font-weight: bold;
-  color: #f5b74a;
-}
-
-section + section {
-  margin-top: 16px;
-}
-
-p + p {
-  margin-top: 16px;
-}
-
-.muted {
-  color: #8a8a8a;
-}
-
-/* Small, lighter line tucked right under the one above. */
-.note {
-  margin-top: 0;
-  font-size: 13px;
-  color: #6e6e6e;
-}
-
-/* Homepage intro: space under the headline, school line in cream. */
-#about h1 {
-  font-size: 20px;
-  margin-bottom: 20px;
-}
-
-#about .muted {
-  font-size: 16px;
-  color: #e8e4da;
-}
-
-#about .note {
-  margin-top: 4px;
 }
 
 /* Demo GIF: fills the text column at any screen size, keeps its shape. */
@@ -199,8 +169,6 @@ p + p {
   display: block;
   width: 100%;
   height: auto;
-  margin: 16px 0;
-  border-radius: 8px;
 }
 
 /* Lists of posts: title on the left, date on the right. */
@@ -214,23 +182,34 @@ section li {
   gap: 16px;
 }
 
+section li > :last-child {
+  white-space: nowrap;
+}
+
 section li + li {
   margin-top: 8px;
 }
 
 ::selection {
-  background: #f5b74a;
-  color: #111;
+  background: var(--accent);
+  color: var(--hi);
 }
 
 /* Blog posts */
+article {
+  line-height: 1.7;
+}
+
 article h1 {
   font-size: 20px;
+  line-height: 1.4;
   font-weight: bold;
+  color: var(--hi);
 }
 
 article h2 {
   font-weight: bold;
+  color: var(--hi);
   margin-top: 32px;
 }
 
@@ -255,12 +234,12 @@ article img {
 
 article code {
   font-family: inherit;
-  background: #1f1f1f;
+  background: #16161a;
   padding: 0 4px;
 }
 
 article pre {
-  background: #1b1b1b;
+  background: #121216;
   padding: 16px;
   overflow-x: auto;
 }
@@ -288,13 +267,25 @@ article pre code {
   header {
     position: sticky;
     top: 0;
-    background: #111;
+    background: var(--bg);
+  }
+}
+
+/* Too narrow for the name and nav on one line: stack them, centered. */
+@media (max-width: 750px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+
+  header nav {
+    justify-content: center;
   }
 }
 
 @media (max-width: 600px) {
   body {
-    font-size: 14px;
     padding: 8px 12px 16px;
   }
 
@@ -302,37 +293,24 @@ article pre code {
     padding: 20px 12px;
   }
 
-  /* Body text: paragraphs and list items, a step smaller than headings and nav. */
+  /* Body text: paragraphs and list items, a step smaller on phones. */
   section p,
+  #about h1,
   article p,
   article li {
     font-size: 13px;
   }
 
-  /* Phones: shrink the name and nav so they fit on one line. */
-  header {
-    gap: 8px 12px;
-  }
-
+  /* Phones: smaller name and nav; the nav wraps under your name. */
   header > a {
-    font-size: 17px;
+    font-size: 20px;
   }
 
   header nav {
-    margin: -4px -7px;
+    gap: 0 10px;
   }
 
   header nav a {
-    padding: 4px 7px;
-    font-size: 12px;
-  }
-
-  header nav a + a {
-    margin-left: 2px;
-  }
-
-  header nav svg {
-    width: 15px;
-    height: 15px;
+    font-size: 15px;
   }
 }

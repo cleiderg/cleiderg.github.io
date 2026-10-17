@@ -9,6 +9,8 @@ function update() {
   });
   // At the very bottom, the last section may be too short to reach the line.
   if (innerHeight + scrollY >= document.documentElement.scrollHeight - 2) current = links.length - 1;
+  // At the very top (or when the page doesn't scroll), mark the first section.
+  if (scrollY < 10) current = 0;
   links.forEach((a, i) => {
     if (i === current) a.setAttribute("aria-current", "true");
     else a.removeAttribute("aria-current");
