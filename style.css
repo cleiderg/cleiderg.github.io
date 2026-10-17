@@ -299,7 +299,7 @@ article pre code {
   }
 
   header nav {
-    gap: 0 14px;
+    gap: 0 20px;
   }
 
   header nav a {
@@ -331,11 +331,11 @@ article pre code {
   }
 
   header nav {
-    gap: 0 9px;
+    gap: 0 14px;
   }
 
   header nav a {
-    font-size: 12px;
+    font-size: 13px;
   }
 }
 
@@ -350,7 +350,7 @@ article pre code {
   }
 
   header {
-    gap: 6px;
+    gap: 10px;
   }
 
   header > a {
@@ -358,7 +358,7 @@ article pre code {
   }
 
   header nav {
-    gap: 0 6px;
+    gap: 0 12px;
   }
 
   header nav a {
