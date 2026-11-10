@@ -1,14 +1,19 @@
 /* Shared by every page. Blog-post-only styles are near the bottom.
-   Theme: near-black page, gray monospace text (after rushil.me). */
+   Theme: warm off-white page, dark gray text. Body text uses the system
+   font; the name, nav, headings, code and detail lines stay monospace. */
 
 :root {
-  color-scheme: dark;
-  --bg: #0a0a0c;
-  --fg: #c9cbd1;
-  --hi: #fff;
-  --dim: #8a8d96;
-  --line: #2a2b31;
-  --accent: #ef4444;
+  color-scheme: light;
+  --mono: ui-monospace, menlo, monospace;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --bg: #faf9f5;
+  --fg: #3d3f45;
+  --hi: #0a0a0c;
+  --dim: #6b6e76;
+  --line: #d4d4d8;
+  --accent: #dc2626;
+  --surface: #f0efea;
+  --code: #ebeae4;
 }
 
 * {
@@ -18,13 +23,10 @@
 }
 
 body {
-  font: 14px/1.45 ui-monospace, menlo, monospace;
+  font: 14px/1.45 var(--mono);
   color: var(--fg);
   background: var(--bg);
   -webkit-text-size-adjust: 100%;
-  /* Same layout as openai.com articles: a 676px text column, centered,
-     with the section nav floating in the left margin. 740px = 676px
-     text + 2 × 32px padding. */
   display: grid;
   grid-template-columns: 1fr 740px 1fr;
   max-width: 1408px;
@@ -40,16 +42,16 @@ body {
   padding: 24px 32px;
 }
 
-/* Side nav: floats in the left margin as you scroll. toc.js marks the
-   section you're reading. */
+/* Side nav: plain lines of text in the left margin, right-aligned toward
+   the article, that follow you as you scroll. toc.js marks the section
+   you're reading. */
 .toc {
   position: sticky;
   top: 48px;
   align-self: start;
   margin-right: 32px;
-  padding: 24px;
-  border-radius: 16px;
-  background: #121216;
+  padding-top: 24px;
+  text-align: right;
   font-size: 12px;
 }
 
@@ -152,7 +154,18 @@ p + .demo,
 }
 
 /* Small gray detail line, e.g. the tech stack. */
+/* Body text: a regular font, which reads more evenly than monospace. */
+section p,
+#about h1,
+article p,
+article li,
+article figcaption {
+  font-family: var(--sans);
+  font-size: 15px;
+}
+
 .meta {
+  font-family: var(--mono);
   font-size: 12px;
   color: var(--dim);
 }
@@ -202,7 +215,7 @@ section li + li {
 
 ::selection {
   background: var(--accent);
-  color: var(--hi);
+  color: #fff;
 }
 
 /* Blog posts */
@@ -243,20 +256,118 @@ article img {
 }
 
 article code {
-  font-family: inherit;
-  background: #16161a;
+  font-family: var(--mono);
+  font-size: 0.92em;
+  background: var(--code);
   padding: 0 4px;
 }
 
 article pre {
-  background: #121216;
+  background: var(--surface);
   padding: 16px;
   overflow-x: auto;
 }
 
 article pre code {
+  font-size: inherit;
   padding: 0;
   background: none;
+}
+
+/* Data tables: thin rules between rows, scroll sideways on small screens. */
+article .table-wrap {
+  margin-top: 16px;
+  overflow-x: auto;
+}
+
+article table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+article th,
+article td {
+  padding: 8px 12px 8px 0;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--line);
+}
+
+article th {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: normal;
+  color: var(--dim);
+}
+
+article td:first-child {
+  white-space: nowrap;
+  color: var(--hi);
+}
+
+@media (max-width: 600px) {
+  article table {
+    font-size: 12px;
+  }
+
+  article td:first-child {
+    white-space: normal;
+  }
+}
+
+/* Passages written by Claude: a thin red outline with a signature. */
+article .claude {
+  margin-top: 16px;
+  padding: 4px 16px 12px;
+  border: 1px solid rgba(220, 38, 38, 0.25);
+  border-radius: 6px;
+}
+
+article .claude .sig {
+  margin-top: 8px;
+  text-align: right;
+  font-size: 12px;
+  font-style: italic;
+  color: #b91c1c;
+}
+
+/* Gameplay clips: two phone-shaped videos side by side. */
+article .clips {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+article .clips video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  background: var(--surface);
+}
+
+article .clips figcaption {
+  margin-top: 8px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--dim);
+  text-align: center;
+}
+
+/* Narrow phones: stack the clips, each no wider than a phone. */
+@media (max-width: 480px) {
+  article .clips {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  article .clips figure {
+    max-width: 280px;
+  }
 }
 
 /* Not enough room for the side nav: hide it and pin the header instead. */

@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="864pt" height="645pt" viewBox="0 0 864 645" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:c2pa="http://c2pa.org/manifest">
+ <metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTo4NjQ3NjY5OC1lYjU5LTQzMjUtODJhMC1hODgyMWFlMWQyOTMAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaAPr3ZWpWYpf3FYxxsQBvAIAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDo3NjlhOTg4OC1mOTE0LTRmYWYtYmI2Yi1kNThlZTU0ZDg3OGRscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNoy2F0+9ar7l4L09Kwaldk4gAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFgg//h6boWf83Wf2YgRp1Sy6g9+YqZ146pkbMdeW8fKR86kZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaD6mqAI1d57nZA237s+xowAAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRMAAAAAAAAAAAAAAAAZGhhc2hYIJxQYvrKhXMmhMB2SKOfUtkZkKc/ZOpbbb2Rr2ySWl3vZG5hbWVuanVtYmYgbWFuaWZlc3RqZXhjbHVzaW9uc4GiZXN0YXJ0GQF1Zmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOjg2NDc2Njk4LWViNTktNDMyNS04MmEwLWE4ODIxYWUxZDI5My9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOmRkMzdiYzUxLTgxZGEtNDRhMi1iOWJhLTk4Mjg2ZDcxY2MyNXJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCD/+HpuhZ/zdZ/ZiBGnVLLqD35ipnXjqmRsx15bx8pHzqJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggbRNLjDIvQcVFYWSfrIg1UgSZCdPmZPlZRolzk+AbQ72iY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFgg2t7zjh7Z0HRqR0GWJkb1E+fwXofCXa2l3uWqJ6YrurJ0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQMpcB7DD8F1XfsTx+aZ9NYJ/eIzASz/rT8e0Gm+KMo8zzPa/9WYfUrsQK3LL4mMbYyPSPyKVA7xEsRHbtn+8wHs=</c2pa:manifest>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-11-09T06:44:39.004332</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 676.8 
+L 864 676.8 
+L 864 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 95.04 72 
+L 495.36 72 
+Q 504 72 504 80.64 
+L 504 122.4 
+Q 504 131.04 495.36 131.04 
+L 95.04 131.04 
+Q 86.4 131.04 86.4 122.4 
+L 86.4 80.64 
+Q 86.4 72 95.04 72 
+z
+" clip-path="url(#p0007131207)" style="fill: #ffffff; stroke: #a8a69d; stroke-width: 1.3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 95.04 155.52 
+L 495.36 155.52 
+Q 504 155.52 504 164.16 
+L 504 205.92 
+Q 504 214.56 495.36 214.56 
+L 95.04 214.56 
+Q 86.4 214.56 86.4 205.92 
+L 86.4 164.16 
+Q 86.4 155.52 95.04 155.52 
+z
+" clip-path="url(#p0007131207)" style="fill: #ffffff; stroke: #a8a69d; stroke-width: 1.3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 95.04 239.04 
+L 495.36 239.04 
+Q 504 239.04 504 247.68 
+L 504 289.44 
+Q 504 298.08 495.36 298.08 
+L 95.04 298.08 
+Q 86.4 298.08 86.4 289.44 
+L 86.4 247.68 
+Q 86.4 239.04 95.04 239.04 
+z
+" clip-path="url(#p0007131207)" style="fill: #ffffff; stroke: #a8a69d; stroke-width: 1.3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 95.04 322.56 
+L 495.36 322.56 
+Q 504 322.56 504 331.2 
+L 504 372.96 
+Q 504 381.6 495.36 381.6 
+L 95.04 381.6 
+Q 86.4 381.6 86.4 372.96 
+L 86.4 331.2 
+Q 86.4 322.56 95.04 322.56 
+z
+" clip-path="url(#p0007131207)" style="fill: #ffffff; stroke: #a8a69d; stroke-width: 1.3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 95.04 406.08 
+L 495.36 406.08 
+Q 504 406.08 504 414.72 
+L 504 456.48 
+Q 504 465.12 495.36 465.12 
+L 95.04 465.12 
+Q 86.4 465.12 86.4 456.48 
+L 86.4 414.72 
+Q 86.4 406.08 95.04 406.08 
+z
+" clip-path="url(#p0007131207)" style="fill: #ffffff; stroke: #a8a69d; stroke-width: 1.3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 95.04 489.6 
+L 495.36 489.6 
+Q 504 489.6 504 498.24 
+L 504 540 
+Q 504 548.64 495.36 548.64 
+L 95.04 548.64 
+Q 86.4 548.64 86.4 540 
+L 86.4 498.24 
+Q 86.4 489.6 95.04 489.6 
+z
+" clip-path="url(#p0007131207)" style="fill: #ffffff; stroke: #a8a69d; stroke-width: 1.3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 95.04 573.12 
+L 495.36 573.12 
+Q 504 573.12 504 581.76 
+L 504 623.52 
+Q 504 632.16 495.36 632.16 
+L 95.04 632.16 
+Q 86.4 632.16 86.4 623.52 
+L 86.4 581.76 
+Q 86.4 573.12 95.04 573.12 
+z
+" clip-path="url(#p0007131207)" style="fill: #e6eef7; stroke: #2b6cb0; stroke-width: 2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 541.44 231.84 
+L 812.16 231.84 
+Q 820.8 231.84 820.8 240.48 
+L 820.8 303.84 
+Q 820.8 312.48 812.16 312.48 
+L 541.44 312.48 
+Q 532.8 312.48 532.8 303.84 
+L 532.8 240.48 
+Q 532.8 231.84 541.44 231.84 
+z
+" clip-path="url(#p0007131207)" style="fill: #ffffff; stroke-dasharray: 6.5,5.2; stroke-dashoffset: 0; stroke: #a8a69d; stroke-width: 1.3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 541.44 329.76 
+L 812.16 329.76 
+Q 820.8 329.76 820.8 338.4 
+L 820.8 401.76 
+Q 820.8 410.4 812.16 410.4 
+L 541.44 410.4 
+Q 532.8 410.4 532.8 401.76 
+L 532.8 338.4 
+Q 532.8 329.76 541.44 329.76 
+z
+" clip-path="url(#p0007131207)" style="fill: #ffffff; stroke-dasharray: 6.5,5.2; stroke-dashoffset: 0; stroke: #a8a69d; stroke-width: 1.3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 541.44 430.56 
+L 812.16 430.56 
+Q 820.8 430.56 820.8 439.2 
+L 820.8 486.72 
+Q 820.8 495.36 812.16 495.36 
+L 541.44 495.36 
+Q 532.8 495.36 532.8 486.72 
+L 532.8 439.2 
+Q 532.8 430.56 541.44 430.56 
+z
+" clip-path="url(#p0007131207)" style="fill: #ffffff; stroke-dasharray: 6.5,5.2; stroke-dashoffset: 0; stroke: #a8a69d; stroke-width: 1.3; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 820.8 370.08 
+L 842.4 370.08 
+L 842.4 101.52 
+" clip-path="url(#p0007131207)" style="fill: none; stroke: #8e8c84; stroke-width: 1.3; stroke-linecap: square"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 14px; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; text-anchor: start; fill: #1f1e1d" x="100.8" y="100.132773" transform="rotate(-0 100.8 100.132773)">1. Me: PRD and specs</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 11.5px; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; text-anchor: start; fill: #6b6a64" x="100.8" y="119.38335" transform="rotate(-0 100.8 119.38335)">Milestones, rules and placeholders in docs/ (owner-only)</text>
+   </g>
+   <g id="patch_12">
+    <path d="M 295.2 133.03916 
+Q 295.2 143.279303 295.2 152.066003 
+" style="fill: none; stroke: #8e8c84; stroke-width: 1.3; stroke-linecap: round"/>
+    <path d="M 297.6 147.266003 
+L 295.2 152.066003 
+L 292.8 147.266003 
+z
+" style="fill: #8e8c84; stroke: #8e8c84; stroke-width: 1.3; stroke-linecap: round"/>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 14px; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; text-anchor: start; fill: #1f1e1d" x="100.8" y="183.652773" transform="rotate(-0 100.8 183.652773)">2. Planner (Opus)</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 11.5px; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; text-anchor: start; fill: #6b6a64" x="100.8" y="202.90335" transform="rotate(-0 100.8 202.90335)">Drafts up to 10 issues for the next unplanned milestone</text>
+   </g>
+   <g id="patch_13">
+    <path d="M 295.2 216.55916 
+Q 295.2 226.799303 295.2 235.586003 
+" style="fill: none; stroke: #8e8c84; stroke-width: 1.3; stroke-linecap: round"/>
+    <path d="M 297.6 230.786003 
+L 295.2 235.586003 
+L 292.8 230.786003 
+z
+" style="fill: #8e8c84; stroke: #8e8c84; stroke-width: 1.3; stroke-linecap: round"/>
+   </g>
+   <g id="text_5">
+    <text style="font-weight: 700; font-size: 14px; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; text-anchor: start; fill: #1f1e1d" x="100.8" y="267.172773" transform="rotate(-0 100.8 267.172773)">3. Runner (Python, no AI)</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 11.5px; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; text-anchor: start; fill: #6b6a64" x="100.8" y="286.42335" transform="rotate(-0 100.8 286.42335)">Picks a ready issue, makes a worktree, opens the PR</text>
+   </g>
+   <g id="patch_14">
+    <path d="M 295.2 300.07916 
+Q 295.2 310.319303 295.2 319.106003 
+" style="fill: none; stroke: #8e8c84; stroke-width: 1.3; stroke-linecap: round"/>
+    <path d="M 297.6 314.306003 
+L 295.2 319.106003 
+L 292.8 314.306003 
+z
+" style="fill: #8e8c84; stroke: #8e8c84; stroke-width: 1.3; stroke-linecap: round"/>
+   </g>
+   <g id="text_7">
+    <text style="font-weight: 700; font-size: 14px; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; text-anchor: start; fill: #1f1e1d" x="100.8" y="350.692773" transform="rotate(-0 100.8 350.692773)">4. Coder (Sonnet)</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 11.5px; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; text-anchor: start; fill: #6b6a64" x="100.8" y="369.94335" transform="rotate(-0 100.8 369.94335)">Writes the code and a test for each acceptance criterion</text>
+   </g>
+   <g id="patch_15">
+    <path d="M 295.2 383.59916 
+Q 295.2 393.839303 295.2 402.626003 
+" style="fill: none; stroke: #8e8c84; stroke-width: 1.3; stroke-linecap: round"/>
+    <path d="M 297.6 397.826003 
+L 295.2 402.626003 
+L 292.8 397.826003 
+z
+" style="fill: #8e8c84; stroke: #8e8c84; stroke-width: 1.3; stroke-linecap: round"/>
+   </g>
+   <g id="text_9">
+    <text style="font-weight: 700; font-size: 14px; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; text-anchor: start; fill: #1f1e1d" x="100.8" y="434.212773" transform="rotate(-0 100.8 434.212773)">5. Checks on the PR</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 11.5px; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; text-anchor: start; fill: #6b6a64" x="100.8" y="453.46335" transform="rotate(-0 100.8 453.46335)">CI tests, path-guard and workflow-guard</text>
+   </g>
+   <g id="patch_16">
+    <path d="M 295.2 467.11916 
+Q 295.2 477.359303 295.2 486.146003 
+" style="fill: none; stroke: #8e8c84; stroke-width: 1.3; stroke-linecap: round"/>
+    <path d="M 297.6 481.346003 
+L 295.2 486.146003 
+L 292.8 481.346003 
+z
+" style="fill: #8e8c84; stroke: #8e8c84; stroke-width: 1.3; stroke-linecap: round"/>
+   </g>
+   <g id="text_11">
+    <text style="font-weight: 700; font-size: 14px; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; text-anchor: start; fill: #1f1e1d" x="100.8" y="517.732773" transform="rotate(-0 100.8 517.732773)">6. Reviewer (Opus)</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 11.5px; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; text-anchor: start; fill: #6b6a64" x="100.8" y="536.98335" transform="rotate(-0 100.8 536.98335)">Checks the PR against the issue; fixes small problems itself</text>
+   </g>
+   <g id="patch_17">
+    <path d="M 295.2 550.63916 
+Q 295.2 560.879303 295.2 569.666003 
+" style="fill: none; stroke: #8e8c84; stroke-width: 1.3; stroke-linecap: round"/>
+    <path d="M 297.6 564.866003 
+L 295.2 569.666003 
+L 292.8 564.866003 
+z
+" style="fill: #8e8c84; stroke: #8e8c84; stroke-width: 1.3; stroke-linecap: round"/>
+   </g>
+   <g id="text_13">
+    <text style="font-weight: 700; font-size: 14px; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; text-anchor: start; fill: #1f1e1d" x="100.8" y="601.252773" transform="rotate(-0 100.8 601.252773)">7. Runner merges to main</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 11.5px; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; text-anchor: start; fill: #6b6a64" x="100.8" y="620.50335" transform="rotate(-0 100.8 620.50335)">Squash merge, staging deploy, Discord message</text>
+   </g>
+   <g id="patch_18">
+    <path d="M 84.398456 519.12 
+L 66.3552 519.12 
+L 66.3552 352.08 
+L 82.945012 352.08 
+" style="fill: none; stroke: #8e8c84; stroke-width: 1.3; stroke-linecap: round"/>
+    <path d="M 78.145012 349.68 
+L 82.945012 352.08 
+L 78.145012 354.48 
+z
+" style="fill: #8e8c84; stroke: #8e8c84; stroke-width: 1.3; stroke-linecap: round"/>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 10.5px; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; fill: #6b6a64" transform="translate(14.795742 433.067285)">changes</text>
+    <text style="font-size: 10.5px; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; fill: #6b6a64" transform="translate(21.241758 445.771875)">asked</text>
+   </g>
+   <g id="text_16">
+    <text style="font-weight: 700; font-size: 13.5px; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; text-anchor: start; fill: #1f1e1d" x="545.76" y="256.910889" transform="rotate(-0 545.76 256.910889)">Watcher (my Claude plan)</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 11.5px; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; text-anchor: start; fill: #6b6a64" x="545.76" y="274.90335" transform="rotate(-0 545.76 274.90335)">Every 6 h, a free health check</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 11.5px; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; text-anchor: start; fill: #6b6a64" x="545.76" y="290.74335" transform="rotate(-0 545.76 290.74335)">Claude runs only if something broke</text>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 11.5px; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; text-anchor: start; fill: #6b6a64" x="545.76" y="306.58335" transform="rotate(-0 545.76 306.58335)">Restarts, re-runs CI, drafts fixes</text>
+   </g>
+   <g id="text_20">
+    <text style="font-weight: 700; font-size: 13.5px; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; text-anchor: start; fill: #1f1e1d" x="545.76" y="354.830889" transform="rotate(-0 545.76 354.830889)">Questions to me</text>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 11.5px; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; text-anchor: start; fill: #6b6a64" x="545.76" y="372.82335" transform="rotate(-0 545.76 372.82335)">Agent stops on a decision</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 11.5px; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; text-anchor: start; fill: #6b6a64" x="545.76" y="388.66335" transform="rotate(-0 545.76 388.66335)">Question issue + Discord ping</text>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 11.5px; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; text-anchor: start; fill: #6b6a64" x="545.76" y="404.50335" transform="rotate(-0 545.76 404.50335)">I answer and close it</text>
+   </g>
+   <g id="text_24">
+    <text style="font-weight: 700; font-size: 13.5px; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; text-anchor: start; fill: #1f1e1d" x="545.76" y="455.630889" transform="rotate(-0 545.76 455.630889)">Workflow helper (my login)</text>
+   </g>
+   <g id="text_25">
+    <text style="font-size: 11.5px; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; text-anchor: start; fill: #6b6a64" x="545.76" y="473.62335" transform="rotate(-0 545.76 473.62335)">Opens CI changes as PRs</text>
+   </g>
+   <g id="text_26">
+    <text style="font-size: 11.5px; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; text-anchor: start; fill: #6b6a64" x="545.76" y="489.46335" transform="rotate(-0 545.76 489.46335)">I review and merge them</text>
+   </g>
+   <g id="patch_19">
+    <path d="M 530.799609 268.56 
+Q 518.399229 268.56 507.452292 268.56 
+" style="fill: none; stroke: #8e8c84; stroke-width: 1.3; stroke-linecap: round"/>
+    <path d="M 512.252292 270.96 
+L 507.452292 268.56 
+L 512.252292 266.16 
+z
+" style="fill: #8e8c84; stroke: #8e8c84; stroke-width: 1.3; stroke-linecap: round"/>
+   </g>
+   <g id="patch_20">
+    <path d="M 506.000391 352.08 
+Q 518.400771 352.08 529.347708 352.08 
+" style="fill: none; stroke: #8e8c84; stroke-width: 1.3; stroke-linecap: round"/>
+    <path d="M 524.547708 349.68 
+L 529.347708 352.08 
+L 524.547708 354.48 
+z
+" style="fill: #8e8c84; stroke: #8e8c84; stroke-width: 1.3; stroke-linecap: round"/>
+   </g>
+   <g id="patch_21">
+    <path d="M 530.799609 435.6 
+Q 518.399229 435.6 507.452292 435.6 
+" style="fill: none; stroke: #8e8c84; stroke-width: 1.3; stroke-linecap: round"/>
+    <path d="M 512.252292 438 
+L 507.452292 435.6 
+L 512.252292 433.2 
+z
+" style="fill: #8e8c84; stroke: #8e8c84; stroke-width: 1.3; stroke-linecap: round"/>
+   </g>
+   <g id="patch_22">
+    <path d="M 840.399115 101.52 
+Q 673.199218 101.52 507.452764 101.52 
+" style="fill: none; stroke: #8e8c84; stroke-width: 1.3; stroke-linecap: round"/>
+    <path d="M 512.252764 103.92 
+L 507.452764 101.52 
+L 512.252764 99.12 
+z
+" style="fill: #8e8c84; stroke: #8e8c84; stroke-width: 1.3; stroke-linecap: round"/>
+   </g>
+   <g id="text_27">
+    <text style="font-size: 11px; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; text-anchor: start; fill: #6b6a64" x="540" y="92.88" transform="rotate(-0 540 92.88)">answers become spec PRs</text>
+   </g>
+  </g>
+  <g id="text_29">
+   <text style="font-weight: 700; font-size: 17px; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; text-anchor: start; fill: #1f1e1d" x="34.56" y="40.15675" transform="rotate(-0 34.56 40.15675)">A plain Python runner moves each issue from spec to merge; Claude does the work</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p0007131207">
+   <rect x="0" y="0" width="864" height="676.8"/>
+  </clipPath>
+ </defs>
+</svg>

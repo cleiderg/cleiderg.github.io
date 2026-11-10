@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Building an MMO with an Autonomous Orchestration System – Cleider Gomez</title>
+    <meta name="description" content="Claude built a browser-based, mobile-first MMO on its own for two weeks on an old laptop. What the orchestration system got right, where agents sat waiting, and what changes in the next iteration.">
+    <meta name="author" content="Cleider Gomez">
+    <link rel="canonical" href="https://cleidergomez.com/blog/claude-mmo">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://cleidergomez.com/blog/claude-mmo">
+    <meta property="og:title" content="Building an MMO with an Autonomous Orchestration System">
+    <meta property="og:description" content="Claude built a browser-based, mobile-first MMO on its own for two weeks on an old laptop. What the orchestration system got right, where agents sat waiting, and what changes in the next iteration.">
+    <meta property="og:site_name" content="Cleider Gomez">
+    <meta property="article:published_time" content="2026-11-08">
+    <meta name="twitter:card" content="summary">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230c0c0c'/%3E%3Ctext x='16' y='22' font-family='ui-monospace,menlo,monospace' font-size='16' text-anchor='middle' fill='%23faf9f5'%3Ecg%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="../style.css">
+    <script src="../toc.js" defer></script>
+  </head>
+
+  <body>
+    <nav class="toc">
+      <a href="#the-stack">The Stack</a>
+      <a href="#game-design">Game Design</a>
+      <a href="#the-orchestration-system">The Orchestration System</a>
+      <a href="#the-results">The Results</a>
+      <a href="#the-data">The Data</a>
+      <a href="#agents-waiting">Agents Waiting</a>
+      <a href="#other-issues">Other Issues</a>
+      <a href="#the-next-iteration">The Next Iteration</a>
+      <a href="#the-new-orchestration-system">The New Orchestration System</a>
+      <a href="#in-the-future">In The Future</a>
+    </nav>
+
+    <div class="page">
+      <header>
+        <a href="/">Cleider Gomez</a>
+        <nav>
+          <a href="/">About</a>
+          <a href="/blog/" aria-current="page">Blog</a>
+          <a href="https://github.com/cleiderg" aria-label="GitHub"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 0h6v1h-6zM3 1h10v1h-10zM2 2h12v1h-12zM1 3h3v1h-3zM5 3h6v1h-6zM12 3h3v1h-3zM1 4h3v1h-3zM6 4h4v1h-4zM12 4h3v1h-3zM0 5h4v1h-4zM12 5h4v1h-4zM0 6h3v1h-3zM13 6h3v1h-3zM0 7h3v1h-3zM13 7h3v1h-3zM0 8h3v1h-3zM13 8h3v1h-3zM0 9h4v1h-4zM12 9h4v1h-4zM0 10h6v1h-6zM10 10h6v1h-6zM1 11h2v1h-2zM4 11h2v1h-2zM10 11h5v1h-5zM1 12h3v1h-3zM10 12h5v1h-5zM2 13h4v1h-4zM10 13h4v1h-4zM3 14h3v1h-3zM10 14h3v1h-3zM5 15h1v1h-1zM10 15h1v1h-1z"/></svg></a>
+          <a href="https://www.linkedin.com/in/cleidergomez/" aria-label="LinkedIn"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 0h14v1h-14zM0 1h16v1h-16zM0 2h16v1h-16zM0 3h3v1h-3zM5 3h11v1h-11zM0 4h3v1h-3zM5 4h11v1h-11zM0 5h16v1h-16zM0 6h3v1h-3zM5 6h2v1h-2zM10 6h6v1h-6zM0 7h3v1h-3zM5 7h2v1h-2zM12 7h4v1h-4zM0 8h3v1h-3zM5 8h2v1h-2zM9 8h2v1h-2zM13 8h3v1h-3zM0 9h3v1h-3zM5 9h2v1h-2zM9 9h3v1h-3zM13 9h3v1h-3zM0 10h3v1h-3zM5 10h2v1h-2zM9 10h3v1h-3zM13 10h3v1h-3zM0 11h3v1h-3zM5 11h2v1h-2zM9 11h3v1h-3zM13 11h3v1h-3zM0 12h3v1h-3zM5 12h2v1h-2zM9 12h3v1h-3zM13 12h3v1h-3zM0 13h16v1h-16zM0 14h16v1h-16zM1 15h14v1h-14z"/></svg></a>
+          <a href="/resume.pdf" target="_blank" rel="noopener" aria-label="Resume (PDF)"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 0h8v1h-8zM2 1h8v1h-8zM11 1h1v1h-1zM2 2h8v1h-8zM11 2h2v1h-2zM2 3h8v1h-8zM11 3h3v1h-3zM2 4h12v1h-12zM2 5h12v1h-12zM2 6h2v1h-2zM12 6h2v1h-2zM2 7h12v1h-12zM2 8h2v1h-2zM12 8h2v1h-2zM2 9h12v1h-12zM2 10h2v1h-2zM12 10h2v1h-2zM2 11h12v1h-12zM2 12h2v1h-2zM9 12h5v1h-5zM2 13h12v1h-12zM2 14h12v1h-12zM2 15h12v1h-12z"/></svg></a>
+        </nav>
+      </header>
+
+      <article>
+        <h1>Building an MMO with an Autonomous Orchestration System</h1>
+        <time class="muted" datetime="2026-11-08">Nov 8, 2026</time>
+        <p class="muted">Sections bordered in red were written by Claude.</p>
+
+        <p>I wanted to make an MMO that could be played from any device within minutes of signing up. It would be fast and immediately allow you to interact and play with your friends. This was my main goal when deciding what to prioritize; getting people in and then giving them a reason to stay. I settled on an in browser mobile first design. It could be played comfortably with a cellular network connection within any browser. You didn't have to download anything or commit to any operating system or device. With these constraints it still had to maintain playability and be a full interactive MMO experience.</p>
+
+        <p>I wanted a system that, with enough direction, would allow Claude to develop the game for me. I settled on using my old laptop as an always-on environment where Claude could autonomously develop my game. I gave it its own claude pro account, a PRD, an orchestration system, and git to manage its state. After two weeks of development, I stopped it to reflect on what it was capable of, issues I encountered, and how I could improve my approach for the next iteration.</p>
+
+        <h2 id="the-stack">The Stack</h2>
+        <p>I started off by prompting Claude (Opus 5.5) on what kind of game I wanted to make. I gave Claude approximate values on concurrent player count, world size and what types of actions I needed to decide on my technologies. I prioritized low latency and gameplay mechanics over visual graphics. The stack would be:</p>
+        <pre><code>Client: Typescript, Three.js HTML CSS
+Game Server: Go, WebSocket
+Client Host: CloudFlare Pages
+Server Host: Vultr, Caddy for HTTPS
+Database: Vultr managed PostgreSQL</code></pre>
+
+        <h2 id="game-design">Game Design - Initial PRD</h2>
+        <p>I wanted my game to feel like a third place environment; a place where you could meet other students, interact with your friends or just hangout with people from the same school. Aside from basic MMO features like communication, character progression, customization and combat my game would also feature:</p>
+        <ul>
+          <li>Real map data from UCI to give players some form of attachment to the world of the game, instead of a fictional world that a player would have to grow interest in.</li>
+          <li>Mini games you could play with anyone such as card games like uno, poker and blackjack. Sitting at a table to join or start a game with anyone online.</li>
+          <li>Owning property that was part of the persistent shared world meaning your houses location would be part of the real world map. You could rent a house, decorate it and anyone you gave access to could see your decorations.</li>
+          <li>A good/evil meter that only the player could see, your actions within the game carry a good/evil value that, once a threshold was passed, would unlock certain features. If you were evil enough you could kill in safe zones, or good enough you could have a visible marker above you in order to influence others to elect you for positions.</li>
+          <li>Social structures with real power, groups would compete weekly for a chance to alter aspects of the game such as what music would be played and who would be taxed when making purchases.</li>
+        </ul>
+        <p>The last two ideas revolved around what motivates people in societal structures and how I could use that to increase retention and engagement within my game. I wanted real dynamics to form between individuals and groups.</p>
+        <p>Visually it would feature low poly 3d objects with a third person perspective you could rotate. Half the screen would be for a Joystick control and buttons while the other half was left for a view of the game. It was beneficial to ask how other games that were similar to mine, designed their systems. It suggested using OSRS's tick system to allow for predictable gameplay. Then, I had Claude make me a PRD and specs folder based on what I had so far while asking me questions along the way.</p>
+
+        <div class="claude">
+          <ul>
+            <li><strong>PRD</strong> (about 300 lines): summary, success criteria, Phase 1 scope, the must-have vs. stretch split, an explicit out-of-scope list, controls and core loop, the tech stack, architecture overview, load-test evidence, risks, 32 numbered decisions, open questions, and a section for agents with module ownership and rules.</li>
+            <li><strong>specs/</strong>: architecture, networking, persistence, map, gameplay, card tables, and operations.</li>
+          </ul>
+          <p class="sig">— Claude</p>
+        </div>
+
+        <h2 id="the-orchestration-system">The Orchestration System</h2>
+        <p>My goal was to have Claude run the entire development cycle and manage itself on my second computer. I would only interact if necessary and based on the PRD it would create a final product. Claude initially suggested:</p>
+
+        <div class="claude">
+          <p><strong>A lead session with subagents in their own worktrees.</strong> You define one subagent per module in <code>.claude/agents/</code>. Setting <code>isolation: worktree</code> gives each one its own copy of the repo on its own branch. The lead hands a task to the right subagent, it builds and tests in isolation, and it reports back.</p>
+          <p class="sig">— Claude</p>
+        </div>
+
+        <img src="../media/mmo/Graphics/mmo-initial-agent-setup-light.png" width="1170" height="395" alt="Initial setup: I approve merges; a lead Claude session reads the PRD, picks unblocked issues and delegates to subagents (protocol, server-world, server-platform, client), each in its own worktree and branch, which open pull requests that run CI checks">
+
+        <p>I then asked Claude to find two public orchestration systems online to see how they were built and what we could learn from them. It studied Orbi and Sortie and compared it to what we currently have coming up with several changes, some of which were:</p>
+
+        <div class="claude">
+          <p><strong>Move the bookkeeping from the AI lead into the supervisor.</strong> This matters most for your Pro plan:</p>
+          <ul>
+            <li>Today the lead spends tokens on every cycle just listing issues, reading CI status, and checking labels.</li>
+            <li>In Orbi’s design, plain Python does all of that for free: pick the next ready issue, check what it’s blocked by, run the right agent, run the reviewer, apply the merge rules, move labels.</li>
+            <li>AI is only used for writing code, reviewing, drafting the next milestone’s issues, and judging unclear failures.</li>
+          </ul>
+          <p><strong>Keep state on GitHub, not in a local note:</strong></p>
+          <ul>
+            <li>Today attempt counts and history live in <code>~/.lush/HANDOFF.md</code> on the Mac.</li>
+            <li>Instead, use clear issue labels (<code>ready</code>, <code>in-progress</code>, <code>pr-opened</code>, <code>fix-needed</code>, <code>blocked</code>, <code>needs-detail</code>) and a hidden marker in each issue’s comments that records the attempt count and the failure.</li>
+            <li>Same failure 3 times in a row → blocked. A wiped or rebuilt Mac then loses nothing, and you can see the whole history on GitHub.</li>
+          </ul>
+          <p class="sig">— Claude</p>
+        </div>
+
+        <p>The final system was a Python runner that handed work to agents, opened PR's, merged and kept track of book keeping. A reviewer agent would then check PR's once they were completed fixing issues itself or handing back work. The python runner then decides what to do with that PR, so agents only focus on writing code. A planner agent would draft the next Github issues based on the PRD when work was running low. A watcher agent would run four times a day to check on the system and report to me when something was broken.</p>
+
+        <img src="../media/mmo/Graphics/03-how-it-works.svg" width="864" height="645" alt="How the first version worked: I write the PRD and specs; a planner (Opus) drafts issues; a Python runner picks a ready issue, makes a worktree and opens the PR; a coder (Sonnet) writes code and tests; CI, path-guard and workflow-guard checks run; a reviewer (Opus) checks the PR and fixes small problems or asks for changes; the runner merges to main. Alongside: a watcher health check every 6 hours, questions to me over GitHub and Discord, and a workflow helper on my login.">
+
+        <p>Anything the agent couldn't decide on would pause allowing the runner to open an issue on Github. I could comment a fix on the issue then close it, allowing the agent to carry on with my decision. For issues that involved gate files, files that set rules for agents, the watcher would draft a fix in a PR for me to merge or I could comment a different solution, add a watcher label and allow it to make the PR fix which then I could merge. The runner would use Discord to send me questions, PR's that were opened, merged, and when usage limits were hit. The watcher would send me updates on the system's status with a "Needs You" section with questions for me to answer and PR's to merge. This system would prove to have some flaws that I explore in later sections.</p>
+
+        <h2 id="the-results">The Results</h2>
+        <div class="clips">
+          <figure>
+            <video src="../media/mmo/Gameplay/mmo-plaza.mp4" poster="../media/mmo/Gameplay/mmo-plaza.jpg" width="540" height="1064" autoplay muted loop playsinline aria-label="Walking around the plaza, chatting with other players, entering the café, fishing, and the world at night"></video>
+            <figcaption>The plaza, chat, fishing and night</figcaption>
+          </figure>
+          <figure>
+            <video src="../media/mmo/Gameplay/mmo-house.mp4" poster="../media/mmo/Gameplay/mmo-house.jpg" width="540" height="1064" autoplay muted loop playsinline aria-label="Decorating a house, playing a card game at a table, and trading items with another player"></video>
+            <figcaption>Decorating a house, a card game and a trade</figcaption>
+          </figure>
+        </div>
+
+        <h2 id="the-data">The Data</h2>
+        <p>What Claude made was good but not great given the amount of time it had. Opus 5.5 is a very capable model and even using Sonnet as coder agents could still be very effective, but the real gaps were in the system and my lack of intervention. Here was the data:</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Measure</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Code on <code>main</code></td><td>Go server 39,100 lines, TypeScript client 29,300 lines</td></tr>
+              <tr><td>Tests on <code>main</code></td><td>255 test files, 56,100 lines (45% of all code)</td></tr>
+              <tr><td>Agent PR open to merged</td><td>median <strong>16 minutes</strong>; 90% within 4.8 hours</td></tr>
+              <tr><td>Issue created to closed</td><td>median <strong>3.8 hours</strong>; 90% within 40 hours</td></tr>
+              <tr><td>Agent runs</td><td>851: 408 coder, 370 review, 38 planner, 35 plan review</td></tr>
+              <tr><td>Agent working time</td><td>4,012 minutes (about 67 hours)</td></tr>
+              <tr><td>Usage at API prices</td><td>$591 for the agents and watcher</td></tr>
+              <tr><td>Tokens</td><td>about 592 million, 92% of them cached context re-read; 8 million written</td></tr>
+              <tr><td>Times <code>main</code> broke</td><td>5 (Oct 31 to Nov 4)</td></tr>
+              <tr><td>Usage-limit pauses</td><td>18, with <strong>36 agent runs</strong> cut off and resumed</td></tr>
+              <tr><td>Questions to me</td><td>64 (49 gate, 15 design), open for a median of <strong>10.5 hours</strong>; 916 issue-hours in total</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>The most revealing information was how much time work spent waiting compared to actual time spent coding; agents waited on usage limit resets, a broken main, and questions to be answered by me.</p>
+
+        <h2 id="agents-waiting">Agents Waiting</h2>
+        <p>Once the code was written, a PR merged a median of 16 minutes after it opened meaning review, CI, and merging was fast. However, opened issues spent lots of time waiting with a median of 3.8 hours and 10% taking more than 40 hours, everything before the work started, meaning its time went to waiting for its turn, on other issues, usage limits or on my answers. The worst case was when main was broken for 41 hours due to a poor reaction from the runner.</p>
+        <p>The system used Github Actions to automatically test every PR before merging. One of my checks looked at Github's machines' own files as well as mine, so when Github's machines updated one night my test started to fail. A fix for the issue was created but was not able to merge since a rule in the runner prevented any merges while main was broken creating a deadlock. When other agents encountered the failure each filed duplicate issues to fix the broken main. If the runner had been an agent instead of a python script, if a rule had been defined to handle this case, or if I had intervened sooner, this could have been prevented. This leads to another point; the scope at which I would participate in the system.</p>
+        <p>Questions that were asked by agents remained open for a median of 10.5 hours meaning issues were idle until I gave an answer or until the watcher drafted my answer into a PR and I merged it. This would prevent even further development if multiple issues depended on the response of one question.</p>
+        <p>Most of these questions were gate questions (files only I control). They would be marked and drafted by the watcher for me to merge to prevent agents from changing rules in their favor or make edits to the PRD. The problem is the watcher ran every 6 hours so questions I could just answer were quick, but gate questions took 10.6 hours, because even a quick answer waited for the watcher’s next run. Before starting development I didn't consider the maximum involvement I wanted to have nor did I foresee it asking 64 questions.</p>
+        <p>Since I was using a Claude Pro plan with a 5 hour and weekly usage limit, agents were frequently cut off half way through development 36 times with a total of 18 usage limit pauses so once a limit was hit everything stopped. When an agent was resumed its cache had already expired then it had to resend its entire conversation making resuming expensive paying for the context again.</p>
+
+        <h2 id="other-issues">Other Issues</h2>
+        <p>Aside from agents spending time idle I ran in to other issues including:</p>
+        <ul>
+          <li>Running out of Github's CI minutes on a private repository forcing me to make the repository public</li>
+          <li>The planner running out of new work to create once all milestones in the initial PRD were fulfilled.</li>
+          <li>I had to fix the system a total of seven times during development to fix issues I hadn't anticipated.</li>
+          <li>The reviewer writing code itself; this meant Opus was used to write a lot of code instead of sending back fixes to the Sonnet agent.</li>
+          <li>Agents sending over their entire context for each turn so agents had to read entire files instead of just short slices.</li>
+          <li>There was never any full build test; only small pieces were merged and added at a time so the entire game couldn't be properly tested.</li>
+          <li>Creating a convoluted helper script on my own mac login that would turn the watchers CI changes into PRs for me to merge since It required a different Github token for workflow changes.</li>
+        </ul>
+        <p>Ultimately issues came from the initial setup and how I designed it. Had I been more thorough with the PRD and tested the system before letting it go a lot more could have been done.</p>
+
+        <h2 id="the-next-iteration">The Next Iteration</h2>
+        <p>For the second iteration I plan on taking into consideration everything I learned from this initial run on a new code base. The actual game itself has potential to be something great and with models like Opus 5.5 that potential can be met. The new orchestration system will be simpler, tested for edge cases, and have thorough documentation to allow for extensive development. I will document data and findings throughout the process instead of just at the end.</p>
+        <p>The issues that I want to handle from the previous system include:</p>
+        <ul>
+          <li>Proper setup including documentation so it can continuously work on the game without asking question</li>
+          <li>handling a broken main properly; creating one fix and allowing that fix to be merged</li>
+          <li>testing the CI and accounting for updates on the different machines I am using</li>
+          <li>Handling gate questions fast instead of every 6 hours</li>
+          <li>Spending less per agent turn by handing over only relevant information instead of whole files.</li>
+        </ul>
+        <p>I'll be drawing out characters and objects for Claude to add to the game, being much more specific with design choices. I plan on taking pictures of actual locations on the map for Claude to reference when generating the UCI campus. I'll also be downscaling the map to allow for better quality content and less empty space.</p>
+
+        <h2 id="the-new-orchestration-system">The New Orchestration System</h2>
+        <img src="../media/mmo/Graphics/09-next-version.svg" width="864" height="691" alt="The next version: I write feature contracts and GOALS.md and answer only real escalations; a director (Opus) answers agents' questions, splits contracts into tasks and handles stuck issues and a broken main; a plain-code loop runs a task queue, a builder (Sonnet), CI checks with a browser smoke test, a checker (Opus) that plays the change in a browser, and merges to main; a playtester (Opus) plays the staging build nightly and files bugs as new tasks.">
+        <p>The new system will be simple and expected to run for long periods of time with little intervention. It will feature four agents: a director, builder, checker and playtester.</p>
+        <p>I will provide a detailed requirements document with a master goals file. The requirements document won't list every single task to be completed but instead feature contracts for each milestone; what the player can do, what must be true and how it should appear in the browser. The goals document will be my vision, goals and design choices for the director to inherit. The director then creates tasks based on those feature contracts and tailors its choices based on my goals file. I will be more diligent with this step of the process since it sets the framework for the entire system; it's more effective to allocate more time to this step than letting a system run for longer with a worse setup.</p>
+        <p>The director is also in charge of the health of the system, answering questions from agents and escalating only what is essential to me.</p>
+        <p>The runner will still be a python script with plain code because bookkeeping should work the same way every time; its actions are predictable and it can run every 90 seconds without cutting into usage. What isn't predictable is why main might have broken or what questions the agents might ask, so it starts a session with the director for its judgement. If main were to break the runner would start a director session for one fix and that fix to be merged.</p>
+        <p>The runner picks a task and starts a builder session in its own worktree to work on it. The builder then pushes its code and tests, the runner opens a PR and tests it is able to merge with the latest main using CI. These CI tests will now include a browser smoke test to see if it will actually run in the browser. If the builder has a question it stops and asks, the question is picked up by the runner and starts a director session for its judgement. The runner then restarts the builder with an answer in a fresh session instead of handing off the entire conversation.</p>
+        <p>The checker then reviews it against the initial task, if approved it is merged and another task can then be worked on. If something is missing the checker takes note and the runner starts a new builder session with a short handoff instead of all the previous turns.</p>
+        <p>Finally the playtester agent tests the entire game in a browser to find bugs, unlike the earlier browser smoke test this test is actually being played. It runs nightly since it does consume usage. Any bugs it does find become new tasks for the runner to queue.</p>
+        <p>The director will communicate with me through Discord for important issues and a weekly report.</p>
+
+        <h2 id="in-the-future">In The Future</h2>
+        <p>Taking inspiration from <a href="https://x.com/jsnnsa/status/2115623382721126826">Spawn</a>; I want a system that can debug and improve itself based on user reported bugs, bugs the playtester finds, and new ideas I hand the director. This would add another layer of autonomy and expand the lifetime of the game.</p>
+      </article>
+    </div>
+  </body>
+</html>

@@ -9,7 +9,6 @@
     <meta name="author" content="Cleider Gomez">
     <link rel="canonical" href="https://cleidergomez.com/">
 
-    <!-- Link previews (Open Graph / Twitter) -->
     <meta property="og:type" content="profile">
     <meta property="og:url" content="https://cleidergomez.com/">
     <meta property="og:title" content="Cleider Gomez">
@@ -19,7 +18,6 @@
     <meta property="profile:last_name" content="Gomez">
     <meta name="twitter:card" content="summary">
 
-    <!-- Structured data so search engines know this page is about a person -->
     <script type="application/ld+json">
     { 
       "@context": "https://schema.org",
@@ -65,18 +63,25 @@
           </h1>
         </section>
 
+        <section id="mmo">
+          <p>
+          Read about how <a href="/blog/claude-mmo">I'm Building an MMO with an Autonomous Orchestration System</a>
+          with Claude. I give Claude an orchestration system, a $20 Claude Pro plan and its own
+          computer to see if it could make me a full fledged MMO. I let it run for two weeks and
+          wrote down my findings and lessons learned for the next iteration.
+          </p>
+          <p class="meta">TypeScript · Three.js · Go · WebSocket · PostgreSQL · Claude Code</p>
+        </section>
+
         <section id="lantern">
           <p>
-          Right now I'm building <a href="https://github.com/cleiderg/lantern">Lantern</a>, 
-          a local heartbeat daemon that watches a code repository, files issues 
-          as tickets, and hands fixes to AI agents. On a schedule, it scans logs, bug 
-          reports, and test results, files what it finds as tickets, and fixes what’s safe, 
-          leaving anything risky for a person. Every fix arrives as a draft pull request, 
-          built in its own sandbox, where agents are never allowed to push to main. Unlike 
-          most AI coding agents, it keeps persistent memory in a SQLite database, so it can 
-          learn from past fixes and skip issues that aren’t worth a developer’s time.
+          I built <a href="https://github.com/cleiderg/lantern">Lantern</a>, a local heartbeat
+          daemon that watches a code repository, files issues as tickets, and hands fixes to AI
+          agents. Every fix arrives as a draft pull request built in its own sandbox, where agents
+          are never allowed to push to main. It keeps persistent memory in a SQLite database, so it
+          learns from past fixes and skips issues that aren’t worth a developer’s time.
           </p>
-          <img class="demo" src="media/lantern-ui-dark.gif" width="960" height="600" alt="Lantern's local dashboard: triage, a bug fixed by an agent, its transcript, pulses and search">
+          <img class="demo" src="media/lantern/lantern-ui-light.gif" width="960" height="600" alt="Lantern's local dashboard: triage, a bug fixed by an agent, its transcript, pulses and search">
         </section>
 
         <section id="writing">
