@@ -94,6 +94,7 @@ Database: Vultr managed PostgreSQL</code></pre>
         </div>
 
         <img src="../media/mmo/Graphics/mmo-initial-agent-setup-light.png" width="1170" height="395" alt="Initial setup: I approve merges; a lead Claude session reads the PRD, picks unblocked issues and delegates to subagents (protocol, server-world, server-platform, client), each in its own worktree and branch, which open pull requests that run CI checks">
+        <p class="sig">— Claude</p>
 
         <p>I then asked Claude to find two public orchestration systems online to see how they were built and what we could learn from them. It studied Orbi and Sortie and compared it to what we currently have coming up with several changes, some of which were:</p>
 
@@ -116,6 +117,7 @@ Database: Vultr managed PostgreSQL</code></pre>
         <p>The final system was a Python runner that handed work to agents, opened PR's, merged and kept track of book keeping. A reviewer agent would then check PR's once they were completed fixing issues itself or handing back work. The python runner then decides what to do with that PR, so agents only focus on writing code. A planner agent would draft the next Github issues based on the PRD when work was running low. A watcher agent would run four times a day to check on the system and report to me when something was broken.</p>
 
         <img src="../media/mmo/Graphics/03-how-it-works.svg" width="864" height="645" alt="How the first version worked: I write the PRD and specs; a planner (Opus) drafts issues; a Python runner picks a ready issue, makes a worktree and opens the PR; a coder (Sonnet) writes code and tests; CI, path-guard and workflow-guard checks run; a reviewer (Opus) checks the PR and fixes small problems or asks for changes; the runner merges to main. Alongside: a watcher health check every 6 hours, questions to me over GitHub and Discord, and a workflow helper on my login.">
+        <p class="sig">— Claude</p>
 
         <p>Anything the agent couldn't decide on would pause allowing the runner to open an issue on Github. I could comment a fix on the issue then close it, allowing the agent to carry on with my decision. For issues that involved gate files, files that set rules for agents, the watcher would draft a fix in a PR for me to merge or I could comment a different solution, add a watcher label and allow it to make the PR fix which then I could merge. The runner would use Discord to send me questions, PR's that were opened, merged, and when usage limits were hit. The watcher would send me updates on the system's status with a "Needs You" section with questions for me to answer and PR's to merge. This system would prove to have some flaws that I explore in later sections.</p>
 
@@ -189,6 +191,7 @@ Database: Vultr managed PostgreSQL</code></pre>
 
         <h2 id="the-new-orchestration-system">The New Orchestration System</h2>
         <img src="../media/mmo/Graphics/09-next-version.svg" width="864" height="691" alt="The next version: I write feature contracts and GOALS.md and answer only real escalations; a director (Opus) answers agents' questions, splits contracts into tasks and handles stuck issues and a broken main; a plain-code loop runs a task queue, a builder (Sonnet), CI checks with a browser smoke test, a checker (Opus) that plays the change in a browser, and merges to main; a playtester (Opus) plays the staging build nightly and files bugs as new tasks.">
+        <p class="sig">— Claude</p>
         <p>The new system will be simple and expected to run for long periods of time with little intervention. It will feature four agents: a director, builder, checker and playtester.</p>
         <p>I will provide a detailed requirements document with a master goals file. The requirements document won't list every single task to be completed but instead feature contracts for each milestone; what the player can do, what must be true and how it should appear in the browser. The goals document will be my vision, goals and design choices for the director to inherit. The director then creates tasks based on those feature contracts and tailors its choices based on my goals file. I will be more diligent with this step of the process since it sets the framework for the entire system; it's more effective to allocate more time to this step than letting a system run for longer with a worse setup.</p>
         <p>The director is also in charge of the health of the system, answering questions from agents and escalating only what is essential to me.</p>

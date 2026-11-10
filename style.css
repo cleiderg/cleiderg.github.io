@@ -318,7 +318,8 @@ article td:first-child {
   }
 }
 
-/* Passages written by Claude: a thin red outline with a signature. */
+/* Passages written by Claude: a thin red outline with a signature.
+   The signature also sits under the diagrams Claude made. */
 article .claude {
   margin-top: 16px;
   padding: 4px 16px 12px;
@@ -326,7 +327,7 @@ article .claude {
   border-radius: 6px;
 }
 
-article .claude .sig {
+article .sig {
   margin-top: 8px;
   text-align: right;
   font-size: 12px;
